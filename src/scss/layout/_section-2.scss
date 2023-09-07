@@ -1,0 +1,48 @@
+.s2 {
+  background-color: $color-grey;
+  .list {
+    margin: 20px 30px 40px 30px;
+    border: $color-orange solid 1px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    .items {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: $font-Open;
+     .icon{
+        height: 30px;
+        width: 30px;
+        color: $color-orange;
+        
+      }
+    }
+  }
+  .button {
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: $color-grey;
+    .start {
+   
+      background-color: $color-blue;
+      border-radius: 50px 50px 50px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 150px;
+      margin: 30px;
+      
+      
+      a{
+        font-family: $font-Open;
+        text-decoration: none;
+        color:$color-white;}
+    }
+  }
+}
