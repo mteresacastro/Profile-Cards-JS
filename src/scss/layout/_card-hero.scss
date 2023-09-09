@@ -3,8 +3,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: $color-white ;
     align-items: center;
-    box-shadow: 10px 10px 12px 6px rgb(109, 107, 107);
+    background-image: linear-gradient(to bottom, #bfcdd0, #dde9ed);
     @media all and(min-width:768px){
         width: 80%;
         height: 100vh;
@@ -22,11 +23,80 @@
     &--reset{
         margin: auto;
         position: relative;
-        top: -20px;
+        top: -10px;
         height: 30px;
         padding: 4px 12px 6px 10px;
         border-radius: 15px;
         border: solid 1px $color-white;
         font-family: $font-Open;
+        color: #54585a;
+        margin-top: 30px;
+        @media all and(min-width:768px){
+            margin-top: 0px;
+        }
     }
 }
+        .box{
+            width: 240px;
+            height: 390px;
+            margin-bottom: 40px;
+            background-color: $color-white;
+            padding: 21px 0 12px;
+            border-radius: 2px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.32);
+            &__container{
+                width: 5px;
+                min-height: 42px;
+                margin: 2px 15px 10px 0;
+                border-left: 5px solid #438792;
+                &--name {
+                    width: 206px;
+                    height: 20px;
+                    margin: 0 14px 4px 15px;
+                    font: $font-Mont;
+                    font-size: 18px;
+                    color: $color-dark-green; 
+                }
+
+                &--front{
+                    width: 168px;
+                    height: 20px;
+                    margin: 4px 52px 10px 15px;
+                    font: $font-Mont;
+                    color: #54585a;   
+                }
+            }
+            .image{
+                width: 240px;
+                height: 200px;
+                margin: 10px 0;
+                background-image: url(./assets/images/pikachu.png);
+                position: relative;
+                top: 10px;
+                background-size: cover;
+                background-position: center center;
+            }
+            .icons{
+                margin-right: 30px;
+                &--ul{
+                    padding-top: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+
+                    &--li{
+                        border: solid 2px $color-green;
+                        font-size: 18px;
+                        width: 32px;
+                        color: #114e4e;
+                        height: 32px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                }
+            }
+
+    }   
