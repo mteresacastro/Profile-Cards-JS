@@ -1,29 +1,30 @@
-<fieldset>
-    <legend>
-        <div> aqui va el icono</div>
-            <h2>diseña</h2>
-        <div>aqui va el icono</div>
-    </legend>
-    <div>
+<fieldset class="design">
+    <div class="design__box">
+        <legend class="design__box--icontext">
+            <i class="fa-regular fa-object-ungroup icon design__box--icontext--icon"></i>
+            <h2 class="design__box--icontext--text">diseña</h2>
+        </legend>       
+        <i class="fa-solid fa-chevron-up design__box--arrow"></i>
+    </div>
+    
+    <div class="design__box2">
+        <h3 class="design__box2--h3">colores</h3>
 
-
-        <h3>colores</h3>
-
-        <div>
-            <label for="colors">
-                <input id="colors" type="radio" name="colors">
-                aqui va la imagen1
+        <div class="design__box2--colors">
+            <label  for="colors">
+                <input class="design-input" id="colors" type="radio" name="colors">
+                <img src="./assets/images/color1.png" alt="color1">
             </label>
 
             <label for="colors2">
-                <input id="colors2" type="radio" name="colors">
-                aqui va la imagen2
+                <input class="design-input" id="colors2" type="radio" name="colors">
+                <img src="./assets/images/color2.png" alt="color2">
             </label>
 
-            <label for="colors">
-                <input id="colors2" type="radio" name="colors">
-                aqui va la imagen3
+            <label for="colors3">
+                <input class="design-input" id="colors3" type="radio" name="colors">
+                <img src="./assets/images/color3.png" alt="color3">
             </label>
-
-        </div></div>
+        </div>
+    </div>
 </fieldset>
