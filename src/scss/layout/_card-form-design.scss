@@ -1,0 +1,51 @@
+.design{
+    margin:15px;
+    border:none;
+    &__box{
+        display:flex;
+        justify-content:space-between;
+        &--icontext{
+            display:flex;
+            gap:15px;
+            &--icon{
+                color: $color-orange;
+                font-size:18px;
+            }
+            &--text{
+                font-family:$font-Open;
+                font-weight:600;
+                color: #54585a;
+                font-size:18px;
+                text-transform: uppercase;
+            }
+        }
+        &--arrow{
+            font-size:18px;
+            color: #54585a;
+        }
+    } 
+    &__box2{
+        display:flex;
+        justify-content: space-between;
+        margin-top:15px;
+        &--colors{
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+        }
+        &--h3{
+            color: #54585a;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-family: $font-Open;
+            margin-left:30px;
+            font-weight:normal;
+        }
+    }
+}
+
+.design-input[type=radio]{
+    height:20px;
+    width:20px;
+    margin-right:10px;
+}
