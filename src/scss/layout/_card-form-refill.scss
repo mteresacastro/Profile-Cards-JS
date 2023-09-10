@@ -1,88 +1,148 @@
-.refill{
+.refill {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: $color-blue;
+  font-size: 14px;
+  font-family: $font-Open;
+  padding-bottom: 30px;
+  border-bottom: 1px solid $color-white-three;
+
+  .legend2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+
+    .top-div {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  &__icon2 {
+    font-size: 18px;
+    color: $color-orange;
+  }
+  &__h3 {
+    color: $color-gunmetal;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+  &__arrow {
+    border: none;
+    background-color: $color-white;
+    color: $color-gunmetal;
+    width: 18px;
+  }
+
+  .text_form {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+  }
+
+  .label2 {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .input-refill {
+    border: 1px solid $color-green;
+    height: 30px;
+  }
+
+  .img-div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .button-img {
+    background-color: $color-orange;
+    color: $color-white;
+    width: 140px;
+    height: 30px;
+    box-shadow: 0 0 4px 0 $color-black;
     border: none;
-    margin-left: 20px;
-    margin-right: 20px;
-    color: $color-blue;
-    font-size: 14px;
-    font-family: $font-Open;
-    padding-bottom: 30px;
-    border-bottom: 1px solid $color-white-three;
-
-    .legend2{
-        display:flex;
-        justify-content: space-between;
-        width: 100%;
-        align-items: flex-start;
-
-        .top-div{
-            display:flex;
-            gap: 10px;
-        }
+    border-radius: 3px;
+  }
+  .preview {
+    width: 30px;
+    height: 30px;
+    border: 1px solid $color-green;
+    .preview-img {
+      width: 28px;
+      height: 28px;
+      overflow: hidden;
     }
+  }
+}
 
-    &__icon2{
-        font-size: 18px;
-        color: $color-orange;
-    }
-    &__h3{
-        color: $color-gunmetal;
-        text-transform: uppercase;
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 25px;
-    }
-    &__arrow{
-        border:none;
-        background-color: $color-white;
-        color: $color-gunmetal;
-        width: 18px;
-        }
+.sharing {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin: 10px 20px 30px 20px;
+  color: $color-blue;
+  font-size: 14px;
+  font-family: $font-Open;
+  padding-bottom: 30px;
+  border-bottom: 1px solid $color-white-three;
+  .legend3 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
 
-    .text_form{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+    .down-div {
+      display: flex;
+      gap: 10px;
     }
+  }
 
-    .label2{
-        display: flex;
-        flex-direction: column;
-        gap: 7px;
-    }
-    .input-refill{
-        border: 1px solid $color-green;
-        height: 30px; 
-     }
-
-    .img-div{
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-    }
-    .button-img{
-        background-color: $color-orange;
+  &__icon2 {
+    font-size: 18px;
+    color: $color-orange;
+  }
+  &__h3 {
+    color: $color-gunmetal;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+  &__arrow {
+    border: none;
+    background-color: $color-white;
+    color: $color-gunmetal;
+    width: 18px;
+  }
+  .press__button {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    .press__submit {
+      background-color: $color-orange;
+      width: 199px;
+      height: 50px;
+      color: $color-white;
+      font-family: $font-Open;
+      font-weight: 600px;
+      font-size: 19px;
+      text-transform: uppercase;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px 0 $color-black;
+      border: none;
+      .card__id {
         color: $color-white;
-        width: 140px;
-        height: 30px;
-        box-shadow: 0 0 4px 0;
-        border: none;
-        border-radius: 3px;
-        }
-    .preview{
-        width: 30px;
-        height: 30px;
-        border: 1px solid $color-green;
-        .preview-img{
-            width: 28px;
-            height: 28px;
-            overflow: hidden;
-            }
+        padding-right: 10px ;
+       
+      }
     }
+  }
 }
-
-.sharing{
-    border: none;
-}
-
