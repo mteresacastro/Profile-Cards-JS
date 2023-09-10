@@ -25,12 +25,15 @@
         position: relative;
         top: -10px;
         height: 30px;
-        padding: 4px 12px 6px 10px;
+        padding: 4px 12px 4px 10px;
+        background-color: #bfcdd0;
         border-radius: 15px;
+        text-transform: uppercase;
         border: solid 1px $color-white;
         font-family: $font-Open;
         color: #54585a;
         margin-top: 30px;
+        transform: translateY(-10%) translateX(-110%);
         @media all and(min-width:768px){
             margin-top: 0px;
         }
@@ -53,16 +56,15 @@
                     width: 206px;
                     height: 20px;
                     margin: 0 14px 4px 15px;
-                    font: $font-Mont;
+                    font-family: $font-Mont;
                     font-size: 18px;
                     color: $color-dark-green; 
                 }
-
                 &--front{
                     width: 168px;
                     height: 20px;
                     margin: 4px 52px 10px 15px;
-                    font: $font-Mont;
+                    font-family: $font-Mont;
                     color: #54585a;   
                 }
             }
@@ -82,6 +84,7 @@
                     padding-top: 10px;
                     display: flex;
                     flex-direction: row;
+                    list-style-type: none;
                     justify-content: space-evenly;
 
                     &--li{
