@@ -1,30 +1,34 @@
 <fieldset class= "refill">
-    <legend>
-        <i></i>
-        <h3>Rellena</h3>
-        <button><i></i></button>
+    <legend class="legend2">
+        <div class="top-div">
+            <i class="fa-regular fa-keyboard icon refill__icon2"></i>
+            <h3 class="refill__h3">Rellena</h3>
+        </div>
+        <button class="refill__arrow"><i class="fa-solid fa-chevron-up design__box--arrow"></i></button>
     </legend>
-    <div>
-            <label for="name">Nombre completo
-                <input type="text" id="name" placeholder="Ej: Sally Jill">
+    <div class="text_form">
+            <label for="name" class="label2">Nombre completo
+                <input type="text" id="name" placeholder="Ej: Sally Jill" class="input-refill">
             </label>
-            
-            <label for="position">Puesto</label>
-            <input type="text" id="position" placeholder="Ej: Front-end unicorn">
-            <label for="">Imagen de perfil</label>
-                <button>añadir imagen</button>
-                <div>imagenpreview</div>
-            <label for="email">Email
-                <input type="email" id="email" placeholder="Ej: Sally-hill@gmail.com">
+            <label for="position" class="label2">Puesto
+                <input type="text" id="position" placeholder="Ej: Front-end unicorn" class="input-refill">
             </label>
-            <label for="phone">Teléfono
-                <input type="tel" id="phone" placeholder="Ej: 555-55-55-55">
+            <label for="" class="label">Imagen de perfil</label>
+                <div class="img-div">
+                    <button class="button-img">Añadir imagen</button>
+                    <div class="preview"><img src="./assets/images/pikachu.png" alt="user-image" class="preview-img"></div>
+                </div>
+            <label for="email" class="label2">Email
+                <input type="email" id="email" placeholder="Ej: Sally-hill@gmail.com" class="input-refill">
             </label>
-            <label for="lk">Linkedin
-                <input type="text" id="lk" placeholder="Ej: linkedin.com/in/sally.hill">
+            <label for="phone" class="label2">Teléfono
+                <input type="tel" id="phone" placeholder="Ej: 555-55-55-55" class="input-refill">
             </label>
-            <label for="gh">GitHub
-                <input type="text" id="gh" placeholder="Ej: @sally-hill">
+            <label for="lk" class="label2">Linkedin
+                <input type="text" id="lk" placeholder="Ej: linkedin.com/in/sally.hill" class="input-refill">
+            </label>
+            <label for="gh" class="label2">GitHub
+                <input type="text" id="gh" placeholder="Ej: @sally-hill" class="input-refill">
             </label>   
         </form>
     </div>
@@ -32,7 +36,7 @@
 
 <fieldset class= "sharing">
     <legend>
-        <i></i>
+        <i class="fa-solid fa-share-nodes icon"></i>
         <h3>Comparte</h3>
         <button><i></i></button>
     </legend>
