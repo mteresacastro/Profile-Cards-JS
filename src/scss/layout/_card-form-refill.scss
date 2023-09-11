@@ -35,7 +35,7 @@
   }
   &__arrow {
     border: none;
-    background-color: $color-white;
+    background-color: #f8f8f8;
     color: $color-gunmetal;
     width: 18px;
   }
@@ -82,67 +82,3 @@
   }
 }
 
-.sharing {
-  display: flex;
-  flex-direction: column;
-  border: none;
-  margin: 10px 20px 30px 20px;
-  color: $color-blue;
-  font-size: 14px;
-  font-family: $font-Open;
-  padding-bottom: 30px;
-  border-bottom: 1px solid $color-white-three;
-  .legend3 {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: flex-start;
-
-    .down-div {
-      display: flex;
-      gap: 10px;
-    }
-  }
-
-  &__icon2 {
-    font-size: 18px;
-    color: $color-orange;
-  }
-  &__h3 {
-    color: $color-gunmetal;
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 25px;
-  }
-  &__arrow {
-    border: none;
-    background-color: $color-white;
-    color: $color-gunmetal;
-    width: 18px;
-  }
-  .press__button {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    .press__submit {
-      background-color: $color-orange;
-      width: 199px;
-      height: 50px;
-      color: $color-white;
-      font-family: $font-Open;
-      font-weight: 600px;
-      font-size: 19px;
-      text-transform: uppercase;
-      border-radius: 12px;
-      box-shadow: 0 1px 6px 0 $color-black;
-      border: none;
-      .card__id {
-        color: $color-white;
-        padding-right: 10px ;
-       
-      }
-    }
-  }
-}
