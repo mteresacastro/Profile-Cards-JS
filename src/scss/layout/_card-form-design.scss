@@ -1,6 +1,7 @@
 .design{
     margin:15px;
     border:none;
+    border-bottom: 1px solid $color-white-three;
     &__box{
         display:flex;
         justify-content:space-between;
@@ -28,6 +29,7 @@
         display:flex;
         justify-content: space-between;
         margin-top:15px;
+        margin-bottom:15px;
         &--colors{
             display:flex;
             flex-direction:column;
