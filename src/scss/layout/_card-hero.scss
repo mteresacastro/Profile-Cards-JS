@@ -1,5 +1,4 @@
 .card {
-    height: 457px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,21 +6,20 @@
     align-items: center;
     background-image: linear-gradient(to bottom, #bfcdd0, #dde9ed);
     @media all and(min-width:768px){
-        width: 80%;
-        height: 100vh;
+        
         border-radius: 6px;
         padding: 45px 28px 20px 28px;
-        margin: 20px 40px 20px 20px;
+        margin: 20px 20px 20px 20px;
+        grid-column: 2/3;
+        grid-row: 1/4;
     }
     @media all and(min-width:1200px){
-        width: 85%;
-        min-height: 812px;
+       
         border-radius: 6px;
-        padding: 20px 40px 20px 30px;
-        margin: 20px;
+        padding: 20px 20px 20px 30px;
+        
     }
     &--reset{
-        margin: auto;
         position: relative;
         top: -10px;
         height: 30px;
@@ -45,11 +43,12 @@
 }
         .box{
             width: 240px;
-            height: 370px;
+            height: 329px;
             margin-bottom: 40px;
             background-color: $color-white;
             padding: 21px 0 12px;
             border-radius: 2px;
+            justify-content: center;
             box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.32);
         
             &__container{

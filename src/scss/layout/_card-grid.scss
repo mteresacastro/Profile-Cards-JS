@@ -1,0 +1,11 @@
+.grid{
+    @media all and (min-width:768px){
+        display: grid;
+        grid-template-columns: 60% 40%;
+        background-image: linear-gradient(to bottom, $color-white-two, $color-white);
+        
+    }
+    @media all and (min-width:1024px){
+        grid-template-columns: 40% 60%;
+    }
+}
