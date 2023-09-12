@@ -8,3 +8,13 @@
 @import 'layout/card-form-share';
 @import 'layout/footer';
 
+.collapsed{
+    .design__box{
+        .collap-icon{
+        transform: rotate(180deg);
+        }
+    }
+    .design__box2, .text_form, .sharing__box2{
+        display: none;
+    }
+}

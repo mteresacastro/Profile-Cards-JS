@@ -1,6 +1,4 @@
 .footer{
-  
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,12 +30,5 @@
 
     &__img{
         width: 10.3rem;
-        padding-top: 1.2rem;
-        padding-bottom: 2rem;
-        
-        @media all and (min-width: 768px){
-            padding-top: 0rem;
-            padding-bottom: 0rem;
-        }
     }
 }
