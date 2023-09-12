@@ -1,44 +1,33 @@
-.sharing {
-  display: flex;
-  flex-direction: column;
-  border: none;
-  margin: 10px 20px 30px 20px;
-  color: $color-blue;
-  font-size: 14px;
-  font-family: $font-Open;
-  padding-bottom: 30px;
+.sharing{
+  margin:15px;
+  border:none;
   border-bottom: 1px solid $color-white-three;
-  .legend3 {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: flex-start;
-
-    .down-div {
-      display: flex;
-      gap: 10px;
-    }
+  &__box{
+      display:flex;
+      justify-content:space-between;
+      &--icontext{
+          display:flex;
+          gap:15px;
+          &--icon{
+              color: $color-orange;
+              font-size:18px;
+              width: 21px;
+              height: 18px;
+          }
+          &--text{
+              font-family:$font-Open;
+              font-weight:600;
+              color: #54585a;
+              font-size:18px;
+              text-transform: uppercase;
+          }
+      }
+      &--arrow{
+          font-size:18px;
+          color: #54585a;
+      }
   }
 
-  &__icon2 {
-    font-size: 18px;
-    color: $color-orange;
-  }
-  &__h3 {
-    color: $color-gunmetal;
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 25px;
-  }
-  &__arrow {
-    border: none;
-    background-color:   #fcfcfc;
-
-    color: $color-gunmetal;
-    width: 18px;
-
-  }
   .press__button {
     display: flex;
     justify-content: center;

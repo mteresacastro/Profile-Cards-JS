@@ -2,43 +2,42 @@
   display: flex;
   flex-direction: column;
   border: none;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 15px;
   color: $color-blue;
   font-size: 14px;
   font-family: $font-Open;
-  padding-bottom: 30px;
   border-bottom: 1px solid $color-white-three;
-
-  .legend2 {
+  
+  &__box{
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    align-items: flex-start;
-
-    .top-div {
-      display: flex;
-      gap: 10px;
+    &--icontext {
+        display: flex;
+        gap: 15px;
+          &--icon {
+            font-size: 18px;
+            color: $color-orange;
+            width: 21px;
+            height: 18px;
+          }
+          &--text {
+            color: $color-gunmetal;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: 600;
+            }
+          
+      }
+      &--arrow {
+        border: none;
+        background-color: #f8f8f8;
+        color: $color-gunmetal;
+        font-size: 18px;
+        }
     }
+  
   }
-
-  &__icon2 {
-    font-size: 18px;
-    color: $color-orange;
-  }
-  &__h3 {
-    color: $color-gunmetal;
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 25px;
-  }
-  &__arrow {
-    border: none;
-    background-color: #f8f8f8;
-    color: $color-gunmetal;
-    width: 18px;
-  }
+     
 
   .text_form {
     display: flex;
@@ -80,5 +79,4 @@
       overflow: hidden;
     }
   }
-}
 
