@@ -32,10 +32,7 @@
         color: #54585a;
         margin-top: 30px;
         transform: translateY(-10%) translateX(-110%);
-        transition: 0.5s;
-            &:hover {
-            transform: scale(1);
-            }
+        cursor: pointer;
         @media all and(min-width:768px){
             margin-top: 0px;
         }

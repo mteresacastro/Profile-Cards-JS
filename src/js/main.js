@@ -73,3 +73,21 @@ refillTitle.addEventListener ('click', handleClickRefillTitle);
 shareTitle.addEventListener ('click', handleClickShareTitle);
 
 createCard.addEventListener('click', handleClickCreateCard);
+
+
+
+////////PREVIEW////////
+
+const resetButton = document.querySelector('.js-reset-button');
+const inputName = document.querySelector('.js-input-name');
+const previewName = document.querySelector('.js-preview-name');
+
+
+/////////Funcion///
+function handleResetInput(){
+   inputName.value = '';
+   previewName.innerHTML = 'Nombre Apellido';
+   console.log('hola');
+}
+/////Eventos////
+resetButton.addEventListener('click', handleResetInput);
