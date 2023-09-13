@@ -9,7 +9,7 @@
 @import 'layout/footer';
 
 .collapsed{
-    .design__box{
+    .design__box, .refill__box, .sharing__box{
         .collap-icon{
         transform: rotate(180deg);
         }
@@ -18,3 +18,8 @@
         display: none;
     }
 }
+
+.btn__twitter.hidden{
+    display:none;
+}
+
