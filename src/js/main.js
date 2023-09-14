@@ -20,10 +20,10 @@ const previewGitHub = document.querySelector('.js-preview-github');
 ////FORM
 const inputName = document.querySelector('.js-input-nameCompleted');
 const inputJob = document.querySelector('.js-input-job');
-const inputEmail = document.querySelector('js-input-email');
-const inputPhone = document.querySelector('js-input-phone');
-const inputLinkedin = document.querySelector('js-input-linkedin');
-const inputGithub = document.querySelector('js-input-github');
+const inputEmail = document.querySelector('.js-input-email');
+const inputPhone = document.querySelector('.js-input-phone');
+const inputLinkedin = document.querySelector('.js-input-linkedin');
+const inputGithub = document.querySelector('.js-input-github');
 
 //datos
 
@@ -100,13 +100,13 @@ function handleResetInput(event) {
 const formComplete=document.querySelector('.js-form');
 function handleForm(event) {
   event.preventDefault();
-  const inputForm = {
+ const inputForm = {
     name: inputName.value,
     job: inputJob.value,
-    phone: inputPhone,
-    email: inputEmail,
-    linkedin: inputLinkedin,
-    github: inputGithub,
+    phone: inputPhone.value,
+    email: inputEmail.value,
+    linkedin: inputLinkedin.value,
+    github: inputGithub.value,
   };
    
    previewName.innerHTML= inputForm.name;
@@ -116,19 +116,15 @@ function handleForm(event) {
    previewLinkedin.href = `https://${inputForm.linkedin}`;
    previewGitHub.href = `https://github.com/${inputForm.github}`;
 
-  }
-
-  console.log(handleForm);
+}
 
 
 //eventos
 
 designTitle.addEventListener('click', handleClickDesingTitle);
-
 refillTitle.addEventListener('click', handleClickRefillTitle);
-
 shareTitle.addEventListener('click', handleClickShareTitle);
-
 createCard.addEventListener('click', handleClickCreateCard);
 resetButton.addEventListener('click', handleResetInput);
-formComplete.addEventListener('keydown', handleForm);
+formComplete.addEventListener('input', handleForm);
+
