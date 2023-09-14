@@ -89,7 +89,7 @@ function handleResetInput() {
   previewPhone.href = '#';
   inputLinkedin.value = '';
   previewLinkedin.href = '#';
-  inputGitHub.value = '';
+  inputGithub.value = '';
   previewGitHub.href = '#';
 
   previewName.innerHTML = 'Nombre Apellido';
@@ -98,6 +98,7 @@ function handleResetInput() {
 
 const formComplete=document.querySelector('.js-form');
 function handleForm(event) {
+  event.preventDefault();
   const inputForm = {
     name: inputName.value,
     job: inputJob.value,
@@ -108,6 +109,11 @@ function handleForm(event) {
   };
    
    previewName.innerHTML= inputForm.name;
+   previewJob.innerHTML = inputForm.job;
+   previewPhone.href = `tel:${inputForm.phone}`;
+   previewEmail.href = `mailto:${inputForm.email}`;
+   previewLinkedin.href = `https://${inputForm.linkedin}`;
+   previewGitHub.href = `https://github.com/${inputForm.github}`;
 
   }
 

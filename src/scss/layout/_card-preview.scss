@@ -53,7 +53,7 @@
                 min-height: 42px;
                 margin: 2px 15px 10px 0;
                 border-left: 5px solid #438792;
-                &--name {
+            &--name {
                     width: 206px;
                     height: 20px;
                     margin: 0 14px 4px 15px;
@@ -68,6 +68,13 @@
                     font-family: $font-Mont;
                     color: #54585a;   
                 }
+            &__containerRed{
+                border-left: 5px solid #bd1010;
+                }
+            &--nameRed{
+                color: #420101;
+            }
+                  
             }
             .image{
                 width: 240px;
@@ -98,6 +105,11 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                    }
+
+                    &--liRed{
+                        color: #420101;
+                        border: solid 2px #e95626;
                     }
 
                 }
