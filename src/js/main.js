@@ -81,11 +81,27 @@ createCard.addEventListener('click', handleClickCreateCard);
 const resetButton = document.querySelector('.js-reset-button');
 const inputName = document.querySelector('.js-input-name');
 const previewName = document.querySelector('.js-preview-name');
+const previewJob = document.querySelector('.js-preview-job')
+const previewPhone = document.querySelector('.js-preview-phone');
+const previewEmail = document.querySelector('.js-preview-email');
+const previewLinkedin = document.querySelector('.js-preview-linkedin');
+const previewGitHub = document.querySelector('.js-preview-github');
 
 
 /////////Funcion///
+
 function handleResetInput(){
    inputName.value = '';
+   inputJob.value = '';
+   inputEmail.value = '';
+   previewEmail.href = '#';
+   inputPhone.value = '';
+   previewPhone.href = '#';
+   inputLinkedin.value = '';
+   previewLinkedin.href = '#';
+   inputGitHub.value = '';
+   previewGitHub.href = '#';
+
    previewName.innerHTML = 'Nombre Apellido';
    console.log('hola');
 }
