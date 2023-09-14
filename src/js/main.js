@@ -88,22 +88,24 @@ const previewLinkedin = document.querySelector('.js-preview-linkedin');
 const previewGitHub = document.querySelector('.js-preview-github');
 
 
-/////////Funcion///
+/////////RESET///
 
-function handleResetInput(){
-   inputName.value = '';
-   inputJob.value = '';
-   inputEmail.value = '';
-   previewEmail.href = '#';
-   inputPhone.value = '';
-   previewPhone.href = '#';
-   inputLinkedin.value = '';
-   previewLinkedin.href = '#';
-   inputGitHub.value = '';
-   previewGitHub.href = '#';
+function handleclickDelete(event) {
 
-   previewName.innerHTML = 'Nombre Apellido';
-   console.log('hola');
+    event.preventDefault();
+    inputName.value = '';
+    inputJob.value = '';
+    inputEmail.value = '';
+    previewEmail.href = '#';
+    inputPhone.value = '';
+    previewPhone.href = '#';
+    inputLinkedin.value = '';
+    previewLinkedin.href = '#';
+    inputGitHub.value = '';
+    previewGitHub.href = '#';
+
+    previewName.innerHTML = 'Nombre Apellido';
+    previewJob.innerHTML = 'Fron-end developer';
 }
 /////Eventos////
 resetButton.addEventListener('click', handleResetInput);
