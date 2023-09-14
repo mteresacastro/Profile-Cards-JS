@@ -78,22 +78,23 @@ function handleClickCreateCard(event) {
   showCreateCard();
   createCard.classList.add('pulsed-grey');
 }
-/////////Funcion///
+/////////RESET///
 
-function handleResetInput() {
-  inputName.value = '';
-  inputJob.value = '';
-  inputEmail.value = '';
-  previewEmail.href = '#';
-  inputPhone.value = '';
-  previewPhone.href = '#';
-  inputLinkedin.value = '';
-  previewLinkedin.href = '#';
-  inputGitHub.value = '';
-  previewGitHub.href = '#';
+function handleResetInput(event) {
+    event.preventDefault();
+    inputName.value = '';
+    inputJob.value = '';
+    inputEmail.value = '';
+    previewEmail.href = '#';
+    inputPhone.value = '';
+    previewPhone.href = '#';
+    inputLinkedin.value = '';
+    previewLinkedin.href = '#';
+    inputGitHub.value = '';
+    previewGitHub.href = '#';
 
-  previewName.innerHTML = 'Nombre Apellido';
-  console.log('hola');
+    previewName.innerHTML = 'Nombre Apellido';
+    previewJob.innerHTML = 'Font-end developer';
 }
 
 const formComplete=document.querySelector('.js-form');
