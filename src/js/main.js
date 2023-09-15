@@ -24,6 +24,11 @@ const inputEmail = document.querySelector('.js-input-email');
 const inputPhone = document.querySelector('.js-input-phone');
 const inputLinkedin = document.querySelector('.js-input-linkedin');
 const inputGithub = document.querySelector('.js-input-github');
+///COLORES
+const colorOne = document.querySelector('.js-color-1');
+const colorTwo = document.querySelector('.js-color-2');
+const colorThree = document.querySelector('.js-color-3');
+const borderContainer = document.querySelector('.js-container');
 
 //datos
 
@@ -96,28 +101,71 @@ function handleResetInput(event) {
     previewName.innerHTML = 'Nombre Apellido';
     previewJob.innerHTML = 'Font-end developer';
 }
+const data = {
+  "palette": 1,
+  "name": "",
+  "job": "",
+  "phone": "",
+  "email": "",
+  "linkedin": "",
+  "github": "",
+  "photo": "",
+}
+function updatePreview() {
+  previewName.innerHTML= data.name;
+  previewJob.innerHTML = data.job;
+  previewPhone.href = `tel:${data.phone}`;
+  previewEmail.href = `mailto:${data.email}`;
+  previewLinkedin.href = `https://${data.linkedin}`;
+  previewGitHub.href = `https://github.com/${data.github}`;
+};
 
-const formComplete=document.querySelector('.js-form');
-function handleForm(event) {
-  event.preventDefault();
- const inputForm = {
-    name: inputName.value,
-    job: inputJob.value,
-    phone: inputPhone.value,
-    email: inputEmail.value,
-    linkedin: inputLinkedin.value,
-    github: inputGithub.value,
-  };
-   
-   previewName.innerHTML= inputForm.name;
-   previewJob.innerHTML = inputForm.job;
-   previewPhone.href = `tel:${inputForm.phone}`;
-   previewEmail.href = `mailto:${inputForm.email}`;
-   previewLinkedin.href = `https://${inputForm.linkedin}`;
-   previewGitHub.href = `https://github.com/${inputForm.github}`;
 
+//const formComplete=document.querySelector('.js-form');
+function handleInputName() {
+  const name = inputName.value;
+  data.name = name;
+  updatePreview();
+};
+function handleInputJob() {
+  const job = inputJob.value;
+  data.job = job;
+  updatePreview();
+};
+function handleInputEmail() {
+  const email = inputEmail.value;
+  data.email = email;
+  updatePreview();
+};
+function handleInputPhone() {
+  const phone = inputPhone.value;
+  data.phone = phone;
+  updatePreview();
+};
+function handleInputLinkedin() {
+  const linkedin = inputLinkedin.value;
+  data.linkedin = linkedin;
+  updatePreview();
+};
+function handleInputGithub() {
+  const github = inputGithub.value;
+  data.github = github;
+  updatePreview();
+};
+///PALETA COLORES///
+
+function handleClickColorOne(){
+  previewName.classList.add('name');
 }
 
+function handleClickColorTwo(){
+  previewName.classList.add('nameRed');
+  borderContainer.classList.add('containerRed');
+}
+
+function handleClickColorThree(){
+  previewName.classList.add('nameBlue');
+}
 
 //eventos
 
@@ -126,5 +174,13 @@ refillTitle.addEventListener('click', handleClickRefillTitle);
 shareTitle.addEventListener('click', handleClickShareTitle);
 createCard.addEventListener('click', handleClickCreateCard);
 resetButton.addEventListener('click', handleResetInput);
-formComplete.addEventListener('input', handleForm);
+inputName.addEventListener('input', handleInputName);
+inputJob.addEventListener('input', handleInputJob);
+inputEmail.addEventListener('input', handleInputEmail);
+inputPhone.addEventListener('input', handleInputPhone);
+inputLinkedin.addEventListener('input', handleInputLinkedin);
+inputGithub.addEventListener('input', handleInputGithub);
+colorOne.addEventListener('click',handleClickColorOne);
+colorTwo.addEventListener('click',handleClickColorTwo);
+colorThree.addEventListener('click',handleClickColorThree);
 
