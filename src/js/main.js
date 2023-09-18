@@ -65,19 +65,19 @@ function showCreateCard() {
   createCard.classList.add('pulsed-grey');
 }
 
-function handleClickDesingTitle(event) {
+function handleClickDesingTitle() {
   showDesign();
   collapRefill();
   collapShare();
   console.log('oleeee');
 }
 
-function handleClickRefillTitle(event) {
+function handleClickRefillTitle() {
   showRefill();
   collapDesign();
   collapShare();
 }
-function handleClickShareTitle(event) {
+function handleClickShareTitle() {
   showShare();
   collapDesign();
   collapRefill();
@@ -90,39 +90,39 @@ function handleClickCreateCard(event) {
 /////////RESET///
 
 function handleResetInput() {
-    inputName.value = '';
-    inputJob.value = '';
-    //inputEmail = '';
-    previewEmail.href = '#';
-    inputPhone = '';
-    previewPhone.href = '#';
-    inputLinkedin = '';
-    previewLinkedin.href = '#';
-    inputGithub = '';
-    previewGitHub.href = '#';
-    previewName = 'Nombre Apellido';
-    previewJob = 'Font-end developer';
+  inputName.value = '';
+  inputJob.value = '';
+  //inputEmail = '';
+  previewEmail.href = '#';
+  inputPhone = '';
+  previewPhone.href = '#';
+  inputLinkedin = '';
+  previewLinkedin.href = '#';
+  inputGithub = '';
+  previewGitHub.href = '#';
+  previewName = 'Nombre Apellido';
+  previewJob = 'Font-end developer';
 }
 const data = {
-  "palette": 1,
-  "name": "",
-  "job": "",
-  "phone": "",
-  "email": "",
-  "linkedin": "",
-  "github": "",
-  "photo": "",
-}
+  palette: 1,
+  name: '',
+  job: '',
+  phone: '',
+  email: '',
+  linkedin: '',
+  github: '',
+  photo: '',
+};
 function updatePreview() {
-  previewName.innerHTML= data.name;
+  previewName.innerHTML = data.name;
   previewJob.innerHTML = data.job;
   previewPhone.href = `tel:${data.phone}`;
   previewEmail.href = `mailto:${data.email}`;
   previewLinkedin.href = `https://${data.linkedin}`;
   previewGitHub.href = `https://github.com/${data.github}`;
-};
+}
 
-const formComplete=document.querySelector('.js-form');
+const formComplete = document.querySelector('.js-form');
 function handleForm(event) {
   event.preventDefault();
   const inputForm = {
@@ -133,13 +133,13 @@ function handleForm(event) {
     linkedin: inputLinkedin,
     github: inputGithub,
   };
-   
-   previewName.innerHTML= inputForm.name;
-   previewJob.innerHTML = inputForm.job;
-   previewPhone.href = `tel:${inputForm.phone}`;
-   previewEmail.href = `mailto:${inputForm.email}`;
-   previewLinkedin.href = `https://${inputForm.linkedin}/`;
-   previewGitHub.href = `https://github.com/${inputForm.github}/`;
+
+  previewName.innerHTML = inputForm.name;
+  previewJob.innerHTML = inputForm.job;
+  previewPhone.href = `tel:${inputForm.phone}`;
+  previewEmail.href = `mailto:${inputForm.email}`;
+  previewLinkedin.href = `https://${inputForm.linkedin}/`;
+  previewGitHub.href = `https://github.com/${inputForm.github}/`;
 }
 
 //const formComplete=document.querySelector('.js-form');
@@ -147,52 +147,51 @@ function handleInputName() {
   const name = inputName.value;
   data.name = name;
   updatePreview();
-};
+}
 function handleInputJob() {
   const job = inputJob.value;
   data.job = job;
   updatePreview();
-};
+}
 function handleInputEmail() {
   const email = inputEmail.value;
   data.email = email;
   updatePreview();
-};
+}
 function handleInputPhone() {
   const phone = inputPhone.value;
   data.phone = phone;
   updatePreview();
-};
+}
 function handleInputLinkedin() {
   const linkedin = inputLinkedin.value;
   data.linkedin = linkedin;
   updatePreview();
-};
+}
 function handleInputGithub() {
   const github = inputGithub.value;
   data.github = github;
   updatePreview();
-};
+}
 ///PALETA COLORES///
 
-  function handleResetInput() {
-    inputName.value = '';
-    inputJob.value = '';
-    inputEmail = '';
-    previewEmail.href = '#';
-    inputPhone = '';
-    previewPhone.href = '#';
-    inputLinkedin = '';
-    previewLinkedin.href = '#';
-    inputGithub = '';
-    previewGitHub.href = '#';
-    previewName = 'Nombre Apellido';
-    previewJob = 'Font-end developer';
+function handleResetInput() {
+  inputName.value = '';
+  inputJob.value = '';
+  inputEmail = '';
+  previewEmail.href = '#';
+  inputPhone = '';
+  previewPhone.href = '#';
+  inputLinkedin = '';
+  previewLinkedin.href = '#';
+  inputGithub = '';
+  previewGitHub.href = '#';
+  previewName = 'Nombre Apellido';
+  previewJob = 'Font-end developer';
 }
 
-  console.log(handleForm);
-function handleClickColorOne(){
-  
+console.log(handleForm);
+function handleClickColorOne() {
   previewName.classList.remove('nameRed');
   previewName.classList.remove('nameBlue');
   borderContainer.classList.remove('containerRed');
@@ -212,7 +211,7 @@ function handleClickColorOne(){
   iconColorsThree.classList.add('liBlue');
 }
 
-function handleClickColorTwo(){
+function handleClickColorTwo() {
   previewName.classList.add('nameRed');
   previewName.classList.remove('nameBlue');
   borderContainer.classList.add('containerRed');
@@ -232,7 +231,7 @@ function handleClickColorTwo(){
   iconColorsThree.classList.remove('liGrey');
 }
 
-function handleClickColorThree(){
+function handleClickColorThree() {
   previewName.classList.add('nameBlue');
   borderContainer.classList.remove('containerRed');
   borderContainer.classList.remove('containerBlue');
@@ -251,7 +250,6 @@ function handleClickColorThree(){
   iconColorsThree.classList.remove('liRed');
 }
 
-
 //eventos
 
 designTitle.addEventListener('click', handleClickDesingTitle);
@@ -266,6 +264,6 @@ inputEmail.addEventListener('input', handleInputEmail);
 inputPhone.addEventListener('input', handleInputPhone);
 inputLinkedin.addEventListener('input', handleInputLinkedin);
 inputGithub.addEventListener('input', handleInputGithub);
-colorOne.addEventListener('click',handleClickColorOne);
-colorTwo.addEventListener('click',handleClickColorTwo);
-colorThree.addEventListener('click',handleClickColorThree);
+colorOne.addEventListener('click', handleClickColorOne);
+colorTwo.addEventListener('click', handleClickColorTwo);
+colorThree.addEventListener('click', handleClickColorThree);
