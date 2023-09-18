@@ -29,6 +29,10 @@ const colorOne = document.querySelector('.js-color-1');
 const colorTwo = document.querySelector('.js-color-2');
 const colorThree = document.querySelector('.js-color-3');
 const borderContainer = document.querySelector('.js-container');
+const iconColors = document.querySelector('.js-icons');
+const iconColorsOne = document.querySelector('.js-icons-1');
+const iconColorsTwo = document.querySelector('.js-icons-2');
+const iconColorsThree = document.querySelector('.js-icons-3');
 
 //datos
 
@@ -155,17 +159,65 @@ function handleInputGithub() {
 ///PALETA COLORES///
 
 function handleClickColorOne(){
-  previewName.classList.add('name');
+  
+  previewName.classList.remove('nameRed');
+  previewName.classList.remove('nameBlue');
+  borderContainer.classList.remove('containerRed');
+  borderContainer.classList.remove('containerYellow');
+  borderContainer.classList.add('containerBlue');
+  iconColors.classList.remove('liRed');
+  iconColorsOne.classList.remove('liRed');
+  iconColorsTwo.classList.remove('liRed');
+  iconColorsThree.classList.remove('liRed');
+  iconColors.classList.remove('liGrey');
+  iconColorsOne.classList.remove('liGrey');
+  iconColorsTwo.classList.remove('liGrey');
+  iconColorsThree.classList.remove('liGrey');
+  iconColors.classList.add('liBlue');
+  iconColorsOne.classList.add('liBlue');
+  iconColorsTwo.classList.add('liBlue');
+  iconColorsThree.classList.add('liBlue');
 }
 
 function handleClickColorTwo(){
   previewName.classList.add('nameRed');
+  previewName.classList.remove('nameBlue');
   borderContainer.classList.add('containerRed');
+  borderContainer.classList.remove('containerBlue');
+  borderContainer.classList.remove('containerYellow');
+  iconColors.classList.add('liRed');
+  iconColorsOne.classList.add('liRed');
+  iconColorsTwo.classList.add('liRed');
+  iconColorsThree.classList.add('liRed');
+  iconColors.classList.remove('liBlue');
+  iconColorsOne.classList.remove('liBlue');
+  iconColorsTwo.classList.remove('liBlue');
+  iconColorsThree.classList.remove('liBlue');
+  iconColors.classList.remove('liGrey');
+  iconColorsOne.classList.remove('liGrey');
+  iconColorsTwo.classList.remove('liGrey');
+  iconColorsThree.classList.remove('liGrey');
 }
 
 function handleClickColorThree(){
   previewName.classList.add('nameBlue');
+  borderContainer.classList.remove('containerRed');
+  borderContainer.classList.remove('containerBlue');
+  borderContainer.classList.add('containerYellow');
+  iconColors.classList.add('liGrey');
+  iconColorsOne.classList.add('liGrey');
+  iconColorsTwo.classList.add('liGrey');
+  iconColorsThree.classList.add('liGrey');
+  iconColors.classList.remove('liBlue');
+  iconColorsOne.classList.remove('liBlue');
+  iconColorsTwo.classList.remove('liBlue');
+  iconColorsThree.classList.remove('liBlue');
+  iconColors.classList.remove('liRed');
+  iconColorsOne.classList.remove('liRed');
+  iconColorsTwo.classList.remove('liRed');
+  iconColorsThree.classList.remove('liRed');
 }
+
 
 //eventos
 
