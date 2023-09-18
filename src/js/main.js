@@ -20,10 +20,19 @@ const previewGitHub = document.querySelector('.js-preview-github');
 ////FORM
 const inputName = document.querySelector('.js-input-nameCompleted');
 const inputJob = document.querySelector('.js-input-job');
-const inputEmail = document.querySelector('js-input-email');
-const inputPhone = document.querySelector('js-input-phone');
-const inputLinkedin = document.querySelector('js-input-linkedin');
-const inputGithub = document.querySelector('js-input-github');
+const inputEmail = document.querySelector('.js-input-email');
+const inputPhone = document.querySelector('.js-input-phone');
+const inputLinkedin = document.querySelector('.js-input-linkedin');
+const inputGithub = document.querySelector('.js-input-github');
+///COLORES
+const colorOne = document.querySelector('.js-color-1');
+const colorTwo = document.querySelector('.js-color-2');
+const colorThree = document.querySelector('.js-color-3');
+const borderContainer = document.querySelector('.js-container');
+const iconColors = document.querySelector('.js-icons');
+const iconColorsOne = document.querySelector('.js-icons-1');
+const iconColorsTwo = document.querySelector('.js-icons-2');
+const iconColorsThree = document.querySelector('.js-icons-3');
 
 //datos
 
@@ -94,6 +103,24 @@ function handleResetInput() {
     previewName = 'Nombre Apellido';
     previewJob = 'Font-end developer';
 }
+const data = {
+  "palette": 1,
+  "name": "",
+  "job": "",
+  "phone": "",
+  "email": "",
+  "linkedin": "",
+  "github": "",
+  "photo": "",
+}
+function updatePreview() {
+  previewName.innerHTML= data.name;
+  previewJob.innerHTML = data.job;
+  previewPhone.href = `tel:${data.phone}`;
+  previewEmail.href = `mailto:${data.email}`;
+  previewLinkedin.href = `https://${data.linkedin}`;
+  previewGitHub.href = `https://github.com/${data.github}`;
+};
 
 const formComplete=document.querySelector('.js-form');
 function handleForm(event) {
@@ -113,8 +140,40 @@ function handleForm(event) {
    previewEmail.href = `mailto:${inputForm.email}`;
    previewLinkedin.href = `https://${inputForm.linkedin}/`;
    previewGitHub.href = `https://github.com/${inputForm.github}/`;
+}
 
-  }
+//const formComplete=document.querySelector('.js-form');
+function handleInputName() {
+  const name = inputName.value;
+  data.name = name;
+  updatePreview();
+};
+function handleInputJob() {
+  const job = inputJob.value;
+  data.job = job;
+  updatePreview();
+};
+function handleInputEmail() {
+  const email = inputEmail.value;
+  data.email = email;
+  updatePreview();
+};
+function handleInputPhone() {
+  const phone = inputPhone.value;
+  data.phone = phone;
+  updatePreview();
+};
+function handleInputLinkedin() {
+  const linkedin = inputLinkedin.value;
+  data.linkedin = linkedin;
+  updatePreview();
+};
+function handleInputGithub() {
+  const github = inputGithub.value;
+  data.github = github;
+  updatePreview();
+};
+///PALETA COLORES///
 
   function handleResetInput() {
     inputName.value = '';
@@ -132,16 +191,81 @@ function handleForm(event) {
 }
 
   console.log(handleForm);
+function handleClickColorOne(){
+  
+  previewName.classList.remove('nameRed');
+  previewName.classList.remove('nameBlue');
+  borderContainer.classList.remove('containerRed');
+  borderContainer.classList.remove('containerYellow');
+  borderContainer.classList.add('containerBlue');
+  iconColors.classList.remove('liRed');
+  iconColorsOne.classList.remove('liRed');
+  iconColorsTwo.classList.remove('liRed');
+  iconColorsThree.classList.remove('liRed');
+  iconColors.classList.remove('liGrey');
+  iconColorsOne.classList.remove('liGrey');
+  iconColorsTwo.classList.remove('liGrey');
+  iconColorsThree.classList.remove('liGrey');
+  iconColors.classList.add('liBlue');
+  iconColorsOne.classList.add('liBlue');
+  iconColorsTwo.classList.add('liBlue');
+  iconColorsThree.classList.add('liBlue');
+}
+
+function handleClickColorTwo(){
+  previewName.classList.add('nameRed');
+  previewName.classList.remove('nameBlue');
+  borderContainer.classList.add('containerRed');
+  borderContainer.classList.remove('containerBlue');
+  borderContainer.classList.remove('containerYellow');
+  iconColors.classList.add('liRed');
+  iconColorsOne.classList.add('liRed');
+  iconColorsTwo.classList.add('liRed');
+  iconColorsThree.classList.add('liRed');
+  iconColors.classList.remove('liBlue');
+  iconColorsOne.classList.remove('liBlue');
+  iconColorsTwo.classList.remove('liBlue');
+  iconColorsThree.classList.remove('liBlue');
+  iconColors.classList.remove('liGrey');
+  iconColorsOne.classList.remove('liGrey');
+  iconColorsTwo.classList.remove('liGrey');
+  iconColorsThree.classList.remove('liGrey');
+}
+
+function handleClickColorThree(){
+  previewName.classList.add('nameBlue');
+  borderContainer.classList.remove('containerRed');
+  borderContainer.classList.remove('containerBlue');
+  borderContainer.classList.add('containerYellow');
+  iconColors.classList.add('liGrey');
+  iconColorsOne.classList.add('liGrey');
+  iconColorsTwo.classList.add('liGrey');
+  iconColorsThree.classList.add('liGrey');
+  iconColors.classList.remove('liBlue');
+  iconColorsOne.classList.remove('liBlue');
+  iconColorsTwo.classList.remove('liBlue');
+  iconColorsThree.classList.remove('liBlue');
+  iconColors.classList.remove('liRed');
+  iconColorsOne.classList.remove('liRed');
+  iconColorsTwo.classList.remove('liRed');
+  iconColorsThree.classList.remove('liRed');
+}
 
 
 //eventos
 
 designTitle.addEventListener('click', handleClickDesingTitle);
-
 refillTitle.addEventListener('click', handleClickRefillTitle);
-
 shareTitle.addEventListener('click', handleClickShareTitle);
-
 createCard.addEventListener('click', handleClickCreateCard);
 resetButton.addEventListener('click', handleResetInput);
 formComplete.addEventListener('input', handleForm);
+inputName.addEventListener('input', handleInputName);
+inputJob.addEventListener('input', handleInputJob);
+inputEmail.addEventListener('input', handleInputEmail);
+inputPhone.addEventListener('input', handleInputPhone);
+inputLinkedin.addEventListener('input', handleInputLinkedin);
+inputGithub.addEventListener('input', handleInputGithub);
+colorOne.addEventListener('click',handleClickColorOne);
+colorTwo.addEventListener('click',handleClickColorTwo);
+colorThree.addEventListener('click',handleClickColorThree);
