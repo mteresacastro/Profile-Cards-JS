@@ -89,19 +89,26 @@ function handleClickCreateCard(event) {
 }
 /////////RESET///
 
-function handleResetInput() {
-    inputName.value = '';
-    inputJob.value = '';
-    //inputEmail = '';
-    previewEmail.href = '#';
-    inputPhone = '';
-    previewPhone.href = '#';
-    inputLinkedin = '';
-    previewLinkedin.href = '#';
-    inputGithub = '';
-    previewGitHub.href = '#';
-    previewName = 'Nombre Apellido';
-    previewJob = 'Font-end developer';
+function handleResetInput(event) {
+
+  event.preventDefault();
+  inputName.value = '';
+  inputJob.value = '';
+  inputEmail.value = '';
+  previewEmail.href = '#';
+  inputPhone.value = '';
+  previewPhone.href = '#';
+  inputLinkedin.value = '';
+  previewLinkedin.href = '#';
+  inputGithub.value = '';
+  previewGitHub.href = '#';
+
+  previewName.innerHTML = 'Nombre Apellido';
+  previewJob.innerHTML = 'Font-end developer';
+
+   handleClickColorOne();
+
+
 }
 const data = {
   "palette": 1,
@@ -122,27 +129,7 @@ function updatePreview() {
   previewGitHub.href = `https://github.com/${data.github}`;
 };
 
-const formComplete=document.querySelector('.js-form');
-function handleForm(event) {
-  event.preventDefault();
-  const inputForm = {
-    name: inputName.value,
-    job: inputJob.value,
-    phone: inputPhone,
-    email: inputEmail,
-    linkedin: inputLinkedin,
-    github: inputGithub,
-  };
-   
-   previewName.innerHTML= inputForm.name;
-   previewJob.innerHTML = inputForm.job;
-   previewPhone.href = `tel:${inputForm.phone}`;
-   previewEmail.href = `mailto:${inputForm.email}`;
-   previewLinkedin.href = `https://${inputForm.linkedin}/`;
-   previewGitHub.href = `https://github.com/${inputForm.github}/`;
-}
 
-//const formComplete=document.querySelector('.js-form');
 function handleInputName() {
   const name = inputName.value;
   data.name = name;
@@ -175,22 +162,7 @@ function handleInputGithub() {
 };
 ///PALETA COLORES///
 
-  function handleResetInput() {
-    inputName.value = '';
-    inputJob.value = '';
-    inputEmail = '';
-    previewEmail.href = '#';
-    inputPhone = '';
-    previewPhone.href = '#';
-    inputLinkedin = '';
-    previewLinkedin.href = '#';
-    inputGithub = '';
-    previewGitHub.href = '#';
-    previewName = 'Nombre Apellido';
-    previewJob = 'Font-end developer';
-}
 
-  console.log(handleForm);
 function handleClickColorOne(){
   
   previewName.classList.remove('nameRed');
@@ -259,7 +231,6 @@ refillTitle.addEventListener('click', handleClickRefillTitle);
 shareTitle.addEventListener('click', handleClickShareTitle);
 createCard.addEventListener('click', handleClickCreateCard);
 resetButton.addEventListener('click', handleResetInput);
-formComplete.addEventListener('input', handleForm);
 inputName.addEventListener('input', handleInputName);
 inputJob.addEventListener('input', handleInputJob);
 inputEmail.addEventListener('input', handleInputEmail);
