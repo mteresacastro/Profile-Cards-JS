@@ -20,6 +20,7 @@
               color: #54585a;
               font-size:18px;
               text-transform: uppercase;
+              padding-bottom: 10px;
           }
       }
       &--arrow{
@@ -32,6 +33,7 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
+    padding-top: 30px;
     align-items: center;
     padding-bottom: 30px;
     border-bottom: $color-white-three solid 1px;
@@ -78,6 +80,7 @@
     margin-top: 10px;
     flex-direction: column;
     align-items:center;
+    margin-bottom: 35px;
 
     
    

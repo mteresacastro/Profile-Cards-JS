@@ -89,19 +89,26 @@ function handleClickCreateCard(event) {
 }
 /////////RESET///
 
-function handleResetInput() {
+function handleResetInput(event) {
+
+  event.preventDefault();
   inputName.value = '';
   inputJob.value = '';
-  //inputEmail = '';
+  inputEmail.value = '';
   previewEmail.href = '#';
-  inputPhone = '';
+  inputPhone.value = '';
   previewPhone.href = '#';
-  inputLinkedin = '';
+  inputLinkedin.value = '';
   previewLinkedin.href = '#';
-  inputGithub = '';
+  inputGithub.value = '';
   previewGitHub.href = '#';
-  previewName = 'Nombre Apellido';
-  previewJob = 'Font-end developer';
+
+  previewName.innerHTML = 'Nombre Apellido';
+  previewJob.innerHTML = 'Font-end developer';
+
+   handleClickColorOne();
+
+
 }
 const data = {
   palette: 1,
@@ -122,6 +129,7 @@ function updatePreview() {
   previewGitHub.href = `https://github.com/${data.github}`;
 }
 
+<<<<<<< HEAD
 const formComplete = document.querySelector('.js-form');
 function handleForm(event) {
   event.preventDefault();
@@ -141,8 +149,9 @@ function handleForm(event) {
   previewLinkedin.href = `https://${inputForm.linkedin}/`;
   previewGitHub.href = `https://github.com/${inputForm.github}/`;
 }
+=======
+>>>>>>> f18e1ff96fa0dcc93d2dfd647eb410d3723e9a9c
 
-//const formComplete=document.querySelector('.js-form');
 function handleInputName() {
   const name = inputName.value;
   data.name = name;
@@ -175,6 +184,7 @@ function handleInputGithub() {
 }
 ///PALETA COLORES///
 
+<<<<<<< HEAD
 function handleResetInput() {
   inputName.value = '';
   inputJob.value = '';
@@ -192,6 +202,11 @@ function handleResetInput() {
 
 console.log(handleForm);
 function handleClickColorOne() {
+=======
+
+function handleClickColorOne(){
+  
+>>>>>>> f18e1ff96fa0dcc93d2dfd647eb410d3723e9a9c
   previewName.classList.remove('nameRed');
   previewName.classList.remove('nameBlue');
   borderContainer.classList.remove('containerRed');
@@ -257,7 +272,6 @@ refillTitle.addEventListener('click', handleClickRefillTitle);
 shareTitle.addEventListener('click', handleClickShareTitle);
 createCard.addEventListener('click', handleClickCreateCard);
 resetButton.addEventListener('click', handleResetInput);
-formComplete.addEventListener('input', handleForm);
 inputName.addEventListener('input', handleInputName);
 inputJob.addEventListener('input', handleInputJob);
 inputEmail.addEventListener('input', handleInputEmail);
