@@ -80,21 +80,19 @@ function handleClickCreateCard(event) {
 }
 /////////RESET///
 
-function handleResetInput(event) {
-    event.preventDefault();
+function handleResetInput() {
     inputName.value = '';
     inputJob.value = '';
-    inputEmail.value = '';
+    //inputEmail = '';
     previewEmail.href = '#';
-    inputPhone.value = '';
+    inputPhone = '';
     previewPhone.href = '#';
-    inputLinkedin.value = '';
+    inputLinkedin = '';
     previewLinkedin.href = '#';
-    inputGithub.value = '';
+    inputGithub = '';
     previewGitHub.href = '#';
-
-    previewName.innerHTML = 'Nombre Apellido';
-    previewJob.innerHTML = 'Font-end developer';
+    previewName = 'Nombre Apellido';
+    previewJob = 'Font-end developer';
 }
 
 const formComplete=document.querySelector('.js-form');
@@ -113,10 +111,25 @@ function handleForm(event) {
    previewJob.innerHTML = inputForm.job;
    previewPhone.href = `tel:${inputForm.phone}`;
    previewEmail.href = `mailto:${inputForm.email}`;
-   previewLinkedin.href = `https://${inputForm.linkedin}`;
-   previewGitHub.href = `https://github.com/${inputForm.github}`;
+   previewLinkedin.href = `https://${inputForm.linkedin}/`;
+   previewGitHub.href = `https://github.com/${inputForm.github}/`;
 
   }
+
+  function handleResetInput() {
+    inputName.value = '';
+    inputJob.value = '';
+    inputEmail = '';
+    previewEmail.href = '#';
+    inputPhone = '';
+    previewPhone.href = '#';
+    inputLinkedin = '';
+    previewLinkedin.href = '#';
+    inputGithub = '';
+    previewGitHub.href = '#';
+    previewName = 'Nombre Apellido';
+    previewJob = 'Font-end developer';
+}
 
   console.log(handleForm);
 
@@ -131,4 +144,4 @@ shareTitle.addEventListener('click', handleClickShareTitle);
 
 createCard.addEventListener('click', handleClickCreateCard);
 resetButton.addEventListener('click', handleResetInput);
-formComplete.addEventListener('keydown', handleForm);
+formComplete.addEventListener('input', handleForm);
