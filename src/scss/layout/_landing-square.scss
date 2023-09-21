@@ -1,12 +1,14 @@
 .s2 {display: flex;
+  height: 45vh;
+  padding-top: 10px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-color: #f5f5f5;
   .list {
     width: 268px;
     height: 73.8px;
-    margin: 0px 30px 0px 30px;
+    //margin: 0px 30px 0px 30px;
     border: $color-orange solid  1px;
     border-radius: 5px;
     display: flex;
@@ -32,7 +34,7 @@
   }
   .button {
     width:100vw;
- padding:38.6px 0 30px 0;
+    padding:38.6px 0 50px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +70,7 @@
     .list{width: 325px;
       height: 86px;
       padding:0 10px 0 10px;
-      margin: 10px 250px 150px 250px;
+      //margin: 10px 250px 150px 250px;
    
       .items{  
        font-size:16px;
