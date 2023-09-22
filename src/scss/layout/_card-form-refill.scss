@@ -70,14 +70,20 @@
     border: none;
     border-radius: 3px;
   }
+  .action_hiddenField{
+    display: none;
+    
+    background-image: url(../images/pikachu.png);
+  }
   .preview {
+    background-image: url(../images/pikachu.png);
+    z-index: 100;
+    position: relative;
+    background-size: cover;
+    background-position: center ;
     width: 30px;
     height: 30px;
     border: 1px solid $color-green;
-    .preview-img {
-      width: 28px;
-      height: 28px;
-      overflow: hidden;
-    }
+
   }
 
