@@ -8,7 +8,7 @@ const refillTitle = document.querySelector('.js-refillTitle');
 const shareTitle = document.querySelector('.js-shareTitle');
 const createCard = document.querySelector('.js-create-card');
 const twitterCard = document.querySelector('.js-twitter-card');
-const colors=document.querySelector('js-box-colors');
+
 ////////PREVIEW////////
 
 const resetButton = document.querySelector('.js-reset-button');
@@ -34,6 +34,7 @@ const iconColors = document.querySelector('.js-icons');
 const iconColorsOne = document.querySelector('.js-icons-1');
 const iconColorsTwo = document.querySelector('.js-icons-2');
 const iconColorsThree = document.querySelector('.js-icons-3');
+const form = document.querySelector('.js-form');
 
 //datos
 
@@ -70,7 +71,7 @@ function handleClickDesingTitle() {
   showDesign();
   collapRefill();
   collapShare();
-  console.log('oleeee');
+
 }
 
 function handleClickRefillTitle() {
@@ -116,19 +117,24 @@ function handleResetInput(event) {
   previewJob.innerHTML = 'Font-end developer';
 
   handleClickColorOne();
-  checked();
+
 }
 
 
 function updatePreview() {
- 
-  previewName.innerHTML = data.name;
-  previewJob.innerHTML = data.job;
+
+  previewName.innerHTML = data.name.replace('<', '');
+  previewJob.innerHTML = data.job.replace('<','');
   previewPhone.href = `tel:${data.phone}`;
   previewEmail.href = `mailto:${data.email}`;
   previewLinkedin.href = `https://${data.linkedin}`;
   previewGitHub.href = `https://github.com/${data.github}`;
 }
+// function handleInputForm(event){
+//   data[event.target.name] = event.target.value;
+//   updatePreview();
+
+// }
 
 
 function handleInputName() {
@@ -159,7 +165,8 @@ function handleInputLinkedin() {
 function handleInputGithub() {
   const github = inputGithub.value;
   data.github = github;
-  
+  const newGitHub = github.slice(1);
+  data.github = newGitHub;
   updatePreview();
 }
 ///PALETA COLORES///
@@ -239,3 +246,4 @@ inputGithub.addEventListener('input', handleInputGithub);
 colorOne.addEventListener('click', handleClickColorOne);
 colorTwo.addEventListener('click', handleClickColorTwo);
 colorThree.addEventListener('click', handleClickColorThree);
+// form.addEventeListener('input',handleInputForm);
