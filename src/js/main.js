@@ -71,7 +71,6 @@ function handleClickDesingTitle() {
   showDesign();
   collapRefill();
   collapShare();
-
 }
 
 function handleClickRefillTitle() {
@@ -91,7 +90,7 @@ function handleClickCreateCard(event) {
 }
 /////////RESET///
 const data = {
-  palette: 1,
+  colors: 1,
   name: '',
   job: '',
   phone: '',
@@ -114,61 +113,60 @@ function handleResetInput(event) {
   inputGithub.value = '';
   previewGitHub.href = '#';
   previewName.innerHTML = 'Nombre Apellido';
-  previewJob.innerHTML = 'Font-end developer';
+  previewJob.innerHTML = 'Front-end developer';
+  colorOne.checked = true;
 
   handleClickColorOne();
-
 }
 
-
 function updatePreview() {
-
   previewName.innerHTML = data.name.replace('<', '');
-  previewJob.innerHTML = data.job.replace('<','');
+  previewJob.innerHTML = data.job.replace('<', '');
   previewPhone.href = `tel:${data.phone}`;
   previewEmail.href = `mailto:${data.email}`;
   previewLinkedin.href = `https://${data.linkedin}`;
-  previewGitHub.href = `https://github.com/${data.github}`;
+  previewGitHub.href = `https://github.com/${data.github.slice(1)}`;
 }
-// function handleInputForm(event){
-//   data[event.target.name] = event.target.value;
+function handleInputForm(event) {
+
+  data[event.target.name] = event.target.value;
+
+  updatePreview();
+  console.log(data);
+}
+
+// function handleInputName() {
+//   const name = inputName.value;
+//   data.name = name;
 //   updatePreview();
-
 // }
-
-
-function handleInputName() {
-  const name = inputName.value;
-  data.name = name;
-  updatePreview();
-}
-function handleInputJob() {
-  const job = inputJob.value;
-  data.job = job;
-  updatePreview();
-}
-function handleInputEmail() {
-  const email = inputEmail.value;
-  data.email = email;
-  updatePreview();
-}
-function handleInputPhone() {
-  const phone = inputPhone.value;
-  data.phone = phone;
-  updatePreview();
-}
-function handleInputLinkedin() {
-  const linkedin = inputLinkedin.value;
-  data.linkedin = linkedin;
-  updatePreview();
-}
-function handleInputGithub() {
-  const github = inputGithub.value;
-  data.github = github;
-  const newGitHub = github.slice(1);
-  data.github = newGitHub;
-  updatePreview();
-}
+// function handleInputJob() {
+//   const job = inputJob.value;
+//   data.job = job;
+//   updatePreview();
+// }
+// function handleInputEmail() {
+//   const email = inputEmail.value;
+//   data.email = email;
+//   updatePreview();
+// }
+// function handleInputPhone() {
+//   const phone = inputPhone.value;
+//   data.phone = phone;
+//   updatePreview();
+// }
+// function handleInputLinkedin() {
+//   const linkedin = inputLinkedin.value;
+//   data.linkedin = linkedin;
+//   updatePreview();
+// }
+// function handleInputGithub() {
+//   const github = inputGithub.value;
+//   data.github = github;
+//   const newGitHub = github.slice(1);
+//   data.github = newGitHub;
+//   updatePreview();
+//}
 ///PALETA COLORES///
 function handleClickColorOne() {
   colorOne.getAttribute('checked');
@@ -237,13 +235,13 @@ refillTitle.addEventListener('click', handleClickRefillTitle);
 shareTitle.addEventListener('click', handleClickShareTitle);
 createCard.addEventListener('click', handleClickCreateCard);
 resetButton.addEventListener('click', handleResetInput);
-inputName.addEventListener('input', handleInputName);
-inputJob.addEventListener('input', handleInputJob);
-inputEmail.addEventListener('input', handleInputEmail);
-inputPhone.addEventListener('input', handleInputPhone);
-inputLinkedin.addEventListener('input', handleInputLinkedin);
-inputGithub.addEventListener('input', handleInputGithub);
+// inputName.addEventListener('input', handleInputName);
+// inputJob.addEventListener('input', handleInputJob);
+// inputEmail.addEventListener('input', handleInputEmail);
+// inputPhone.addEventListener('input', handleInputPhone);
+// inputLinkedin.addEventListener('input', handleInputLinkedin);
+// inputGithub.addEventListener('input', handleInputGithub);
 colorOne.addEventListener('click', handleClickColorOne);
 colorTwo.addEventListener('click', handleClickColorTwo);
 colorThree.addEventListener('click', handleClickColorThree);
-// form.addEventeListener('input',handleInputForm);
+form.addEventListener('input', handleInputForm);
