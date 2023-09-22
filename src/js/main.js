@@ -66,19 +66,19 @@ function showCreateCard() {
   createCard.classList.add("pulsed-grey");
 }
 
-function handleClickDesingTitle(event) {
+function handleClickDesingTitle() {
   showDesign();
   collapRefill();
   collapShare();
   console.log("oleeee");
 }
 
-function handleClickRefillTitle(event) {
+function handleClickRefillTitle() {
   showRefill();
   collapDesign();
   collapShare();
 }
-function handleClickShareTitle(event) {
+function handleClickShareTitle() {
   showShare();
   collapDesign();
   collapRefill();
@@ -111,13 +111,13 @@ function handleResetInput(event) {
 }
 const data = {
   palette: 1,
-  name: "",
-  job: "",
-  phone: "",
-  email: "",
-  linkedin: "",
-  github: "",
-  photo: "",
+  name: '',
+  job: '',
+  phone: '',
+  email: '',
+  linkedin: '',
+  github: '',
+  photo: '',
 };
 function updatePreview() {
   previewName.innerHTML = data.name;
@@ -126,10 +126,8 @@ function updatePreview() {
   previewEmail.href = `mailto:${data.email}`;
   previewLinkedin.href = `https://${data.linkedin}`;
   previewGitHub.href = `https://github.com/${data.github}`;
-}
-function handleInputForm(event){
-  data[event.target.name] = event.target.value;
-}
+};
+
 
 function handleInputName() {
   const name = inputName.value;
@@ -164,78 +162,80 @@ function handleInputGithub() {
 }
 ///PALETA COLORES///
 
-function handleClickColorOne() {
-  previewName.classList.remove("nameRed");
-  previewName.classList.remove("nameBlue");
-  borderContainer.classList.remove("containerRed");
-  borderContainer.classList.remove("containerYellow");
-  borderContainer.classList.add("containerBlue");
-  iconColors.classList.remove("liRed");
-  iconColorsOne.classList.remove("liRed");
-  iconColorsTwo.classList.remove("liRed");
-  iconColorsThree.classList.remove("liRed");
-  iconColors.classList.remove("liGrey");
-  iconColorsOne.classList.remove("liGrey");
-  iconColorsTwo.classList.remove("liGrey");
-  iconColorsThree.classList.remove("liGrey");
-  iconColors.classList.add("liBlue");
-  iconColorsOne.classList.add("liBlue");
-  iconColorsTwo.classList.add("liBlue");
-  iconColorsThree.classList.add("liBlue");
+
+function handleClickColorOne(){
+  
+  previewName.classList.remove('nameRed');
+  previewName.classList.remove('nameBlue');
+  borderContainer.classList.remove('containerRed');
+  borderContainer.classList.remove('containerYellow');
+  borderContainer.classList.add('containerBlue');
+  iconColors.classList.remove('liRed');
+  iconColorsOne.classList.remove('liRed');
+  iconColorsTwo.classList.remove('liRed');
+  iconColorsThree.classList.remove('liRed');
+  iconColors.classList.remove('liGrey');
+  iconColorsOne.classList.remove('liGrey');
+  iconColorsTwo.classList.remove('liGrey');
+  iconColorsThree.classList.remove('liGrey');
+  iconColors.classList.add('liBlue');
+  iconColorsOne.classList.add('liBlue');
+  iconColorsTwo.classList.add('liBlue');
+  iconColorsThree.classList.add('liBlue');
 }
 
-function handleClickColorTwo() {
-  previewName.classList.add("nameRed");
-  previewName.classList.remove("nameBlue");
-  borderContainer.classList.add("containerRed");
-  borderContainer.classList.remove("containerBlue");
-  borderContainer.classList.remove("containerYellow");
-  iconColors.classList.add("liRed");
-  iconColorsOne.classList.add("liRed");
-  iconColorsTwo.classList.add("liRed");
-  iconColorsThree.classList.add("liRed");
-  iconColors.classList.remove("liBlue");
-  iconColorsOne.classList.remove("liBlue");
-  iconColorsTwo.classList.remove("liBlue");
-  iconColorsThree.classList.remove("liBlue");
-  iconColors.classList.remove("liGrey");
-  iconColorsOne.classList.remove("liGrey");
-  iconColorsTwo.classList.remove("liGrey");
-  iconColorsThree.classList.remove("liGrey");
+function handleClickColorTwo(){
+  previewName.classList.add('nameRed');
+  previewName.classList.remove('nameBlue');
+  borderContainer.classList.add('containerRed');
+  borderContainer.classList.remove('containerBlue');
+  borderContainer.classList.remove('containerYellow');
+  iconColors.classList.add('liRed');
+  iconColorsOne.classList.add('liRed');
+  iconColorsTwo.classList.add('liRed');
+  iconColorsThree.classList.add('liRed');
+  iconColors.classList.remove('liBlue');
+  iconColorsOne.classList.remove('liBlue');
+  iconColorsTwo.classList.remove('liBlue');
+  iconColorsThree.classList.remove('liBlue');
+  iconColors.classList.remove('liGrey');
+  iconColorsOne.classList.remove('liGrey');
+  iconColorsTwo.classList.remove('liGrey');
+  iconColorsThree.classList.remove('liGrey');
 }
 
-function handleClickColorThree() {
-  previewName.classList.add("nameBlue");
-  borderContainer.classList.remove("containerRed");
-  borderContainer.classList.remove("containerBlue");
-  borderContainer.classList.add("containerYellow");
-  iconColors.classList.add("liGrey");
-  iconColorsOne.classList.add("liGrey");
-  iconColorsTwo.classList.add("liGrey");
-  iconColorsThree.classList.add("liGrey");
-  iconColors.classList.remove("liBlue");
-  iconColorsOne.classList.remove("liBlue");
-  iconColorsTwo.classList.remove("liBlue");
-  iconColorsThree.classList.remove("liBlue");
-  iconColors.classList.remove("liRed");
-  iconColorsOne.classList.remove("liRed");
-  iconColorsTwo.classList.remove("liRed");
-  iconColorsThree.classList.remove("liRed");
+function handleClickColorThree(){
+  previewName.classList.add('nameBlue');
+  borderContainer.classList.remove('containerRed');
+  borderContainer.classList.remove('containerBlue');
+  borderContainer.classList.add('containerYellow');
+  iconColors.classList.add('liGrey');
+  iconColorsOne.classList.add('liGrey');
+  iconColorsTwo.classList.add('liGrey');
+  iconColorsThree.classList.add('liGrey');
+  iconColors.classList.remove('liBlue');
+  iconColorsOne.classList.remove('liBlue');
+  iconColorsTwo.classList.remove('liBlue');
+  iconColorsThree.classList.remove('liBlue');
+  iconColors.classList.remove('liRed');
+  iconColorsOne.classList.remove('liRed');
+  iconColorsTwo.classList.remove('liRed');
+  iconColorsThree.classList.remove('liRed');
 }
 
 //eventos
-form.addEventListener('input', handleInputForm);
-designTitle.addEventListener("click", handleClickDesingTitle);
-refillTitle.addEventListener("click", handleClickRefillTitle);
-shareTitle.addEventListener("click", handleClickShareTitle);
-createCard.addEventListener("click", handleClickCreateCard);
-resetButton.addEventListener("click", handleResetInput);
-inputName.addEventListener("input", handleInputName);
-inputJob.addEventListener("input", handleInputJob);
-inputEmail.addEventListener("input", handleInputEmail);
-inputPhone.addEventListener("input", handleInputPhone);
-inputLinkedin.addEventListener("input", handleInputLinkedin);
-inputGithub.addEventListener("input", handleInputGithub);
-colorOne.addEventListener("click", handleClickColorOne);
-colorTwo.addEventListener("click", handleClickColorTwo);
-colorThree.addEventListener("click", handleClickColorThree);
+
+designTitle.addEventListener('click', handleClickDesingTitle);
+refillTitle.addEventListener('click', handleClickRefillTitle);
+shareTitle.addEventListener('click', handleClickShareTitle);
+createCard.addEventListener('click', handleClickCreateCard);
+resetButton.addEventListener('click', handleResetInput);
+inputName.addEventListener('input', handleInputName);
+inputJob.addEventListener('input', handleInputJob);
+inputEmail.addEventListener('input', handleInputEmail);
+inputPhone.addEventListener('input', handleInputPhone);
+inputLinkedin.addEventListener('input', handleInputLinkedin);
+inputGithub.addEventListener('input', handleInputGithub);
+colorOne.addEventListener('click',handleClickColorOne);
+colorTwo.addEventListener('click',handleClickColorTwo);
+colorThree.addEventListener('click',handleClickColorThree);
