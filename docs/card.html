@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Awesome Profile Cards</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css"/>
+  <!--<link rel="icon" href="./assets/images/favicon.png" />-->
+  <script src="https://kit.fontawesome.com/66349fc88a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+    <img class="logo-menu" src="./assets/images/logo-awesome-profile-cards.svg" alt="logo header">
+    </header>
+  <main class="grid">
+    <section class="card">
+        <button class="card--reset js-reset-button">
+            <i class="fa-regular fa-trash-can"></i>  reset</button>
+        
+        <article class="box">
+            <div class="box__container js-container containerBlue">
+                <h1 class="box__container--name js-preview-name">Nombre Apellido</h1>
+                <p class="box__container--front js-preview-job">Front-end developer</p>
+            </div>
+    <div class="image js__profile-preview"></div>
+            <!-- <img class="image js-preview-image" src="./assets/images/pikachu.png" alt=""/> -->
+
+            <nav class="icons">
+                <ul class="icons--ul">
+                    <li>
+                        <a class="icons--ul--li js-preview-phone js-icons liBlue" href="#"><i
+                            class="fa-solid fa-mobile-screen-button"></i></a>
+                    </li>
+                    <li>
+                        <a class="icons--ul--li js-preview-email js-icons-1 liBlue" href="#"><i
+                                class="fa-regular fa-envelope"></i></a>
+                    </li>
+                    <li>
+                        <a class="icons--ul--li js-preview-linkedin js-icons-2 liBlue" target="_blank"
+                            href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                        <a class="icons--ul--li js-preview-github js-icons-3 liBlue" target="_blank"
+                            href="#"><i class="fa-brands fa-github-alt"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </article>
+    </section>
+    <form class="grid-form js-form">
+    <fieldset class="design js-designContainer">
+        <div class="design__box js-designTitle">
+            <legend class="design__box--icontext">
+                <i class="fa-regular fa-object-ungroup icon design__box--icontext--icon"></i>
+                <h2 class="design__box--icontext--text">diseña</h2>
+            </legend>       
+            <i class="fa-solid fa-chevron-up design__box--arrow collap-icon"></i>
+        </div>
+        
+        <div class="design__box2">
+            <h3 class="design__box2--h3">colores</h3>
+
+            <div class="design__box2--colors js-box-colors">
+                <label  for="colors">
+                    <input class="design-input js-color-1 " id="colors" checked type="radio" name="colors">
+                    <img src="./assets/images/color1.png" alt="color1">
+                </label>
+
+                <label for="colors2">
+                    <input class="design-input js-color-2" id="colors2" type="radio" name="colors">
+                    <img src="./assets/images/color2.png" alt="color2">
+                </label>
+
+                <label for="colors3">
+                    <input class="design-input js-color-3" id="colors3" type="radio" name="colors">
+                    <img src="./assets/images/color3.png" alt="color3">
+                </label>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class= "refill collapsed js-refillContainer">
+        <div class="refill__box js-refillTitle">
+            <legend class="refill__box--icontext">
+                <i class="fa-regular fa-keyboard icon refill__box--icontext--icon"></i>
+                <h2 class="refill__box--icontext--text">Rellena</h2>
+            </legend>
+            <i class="fa-solid fa-chevron-up refill__box--arrow collap-icon"></i> 
+        </div>
+        <div class="text_form">
+                <label for="name" class="label2 ">Nombre completo
+                    <input name="name" type="text" id="name"placeholder="Ej: Sally Jill" class="input-refill js-input-nameCompleted" value="">
+                </label>
+                <label for="position" class="label2">Puesto
+                    <input name="job" type="text" id="position" placeholder="Ej: Front-end unicorn" class="input-refill js-input-job" value="">
+                </label>
+                <label>Imagen de perfil</label>
+                <div class="divAddPreviewPhoto">
+                <label class="label button-img" for="image-selector">Añadir imagen</label>
+                <input name="photo" type="file" name="" id="image-selector" class=" js__profile-upload-btn action_hiddenField">   
+         
+                    <div class="preview profile-image js__profile-image"></div></div> 
+                  
+            
+                <label for="email" class="label2">Email
+                    <input name="email" type="email" id="email" placeholder="Ej: Sally-hill@gmail.com" class="input-refill js-input-email" value="">
+                </label>
+                <label for="phone" class="label2">Teléfono
+                    <input name="phone" type="tel" id="phone" placeholder="Ej: 555-55-55-55" class="input-refill js-input-phone">
+                </label>
+                <label for="lk" class="label2">Linkedin
+                    <input name="linkedin" type="search" id="lk" placeholder="Ej: linkedin.com/in/sally.hill" class="input-refill js-input-linkedin" value="">
+                </label>
+                <label for="gh" class="label2">GitHub
+                    <input name="github" type="search" id="gh" placeholder="Ej: @sally-hill" class="input-refill js-input-github" value="">
+                </label>   
+        </div>
+    </fieldset>
+
+
+    <fieldset class= "sharing collapsed js-shareContainer">
+        <div class="sharing__box js-shareTitle">
+            <legend class="sharing__box--icontext">
+                <i class="fa-solid fa-share-nodes icon sharing__icon2 sharing__box--icontext--icon"></i>
+                <h2 class="sharing__h3 sharing__box--icontext--text">Comparte</h2>
+            </legend>
+            <i class="fa-solid fa-chevron-up sharing__box--arrow collap-icon"></i>
+        </div>
+        <div  class="sharing__box2">
+            <div class="press__button">
+                <button class="press__submit js-create-card" type="submit">
+                    <i class="fa-regular fa-address-card card__id"></i>CREAR TARJETA</button>
+            </div>
+            <div class="hidden btn__twitter js-twitter-card">
+                <h3 class="card__created">La tarjeta ha sido creada:</h3>
+                <p class="url">https://awesome-profile-card.com?id=A456DF0001</p>
+                <a class="a" href="https://twitter.com/intent/tweet?text=Mira%20mi%20nueva%20tarjeta%20de%20perfil&url=$$plantillaURLCREADA" target="_blank">
+                    <i class=" fa-brands fa-x-twitter "></i>
+                Compartir en twitter
+                </a>
+            </div>
+        </div>
+    </fieldset>
+    </form>
+  </main>
+  <footer class="footer">
+      <p class="footer__p">Awesome profile-cards @2023
+      </p>
+      <img class="footer__img" src="./assets/images/logo-adalab.png" alt="logo adalab">
+  </footer>
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/1_get-avatar.js"></script>
+</body>
+
+</html>
