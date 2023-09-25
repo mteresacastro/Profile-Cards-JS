@@ -126,11 +126,17 @@ function updatePreview() {
   previewEmail.href = `mailto:${data.email}`;
   previewLinkedin.href = `https://${data.linkedin}`;
   previewGitHub.href = `https://github.com/${data.github.slice(1)}`;
+  if (data.name === '') {
+    previewName.innerHTML = 'Nombre Apellido';
+  }
+  if (data.job === '') {
+    previewJob.innerHTML = 'Front-end developer';
+  }
 }
+
 function handleInputForm(event) {
 
   data[event.target.name] = event.target.value;
-
   updatePreview();
   console.log(data);
 }
