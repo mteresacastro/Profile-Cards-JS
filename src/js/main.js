@@ -79,6 +79,7 @@ function showCreateCard(responseJSON) {
   cardUrl.innerHTML = responseJSON.cardURL;
   cardUrl.href = responseJSON.cardURL;
   twitterLink.href = `https://twitter.com/intent/tweet?text=Mira%20mi%20nueva%20tarjeta%20de%20perfil&url=${responseJSON.cardURL}`;
+  msgError.classList.add('hidden');
 }
 
 function handleClickDesingTitle() {
@@ -111,7 +112,7 @@ function handleClickCreateCard(event) {
     .then((responseJSON) => {
       console.log(responseJSON);
       if (responseJSON.success === false) {
-        msgError.innerHTML = 'Uy! No se pudo crear el card, revisa los campos';
+        msgError.innerHTML = 'Uy! No se pudo crear la tarjeta, revisa los campos <i class="fa-regular fa-face-sad-cry"></i>';
       } else {
         showCreateCard(responseJSON);
         // createCard.classList.add('pulsed-grey');
