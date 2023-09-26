@@ -8,7 +8,7 @@ const refillTitle = document.querySelector('.js-refillTitle');
 const shareTitle = document.querySelector('.js-shareTitle');
 const createCard = document.querySelector('.js-create-card');
 const twitterCard = document.querySelector('.js-twitter-card');
-
+const msgError = document.querySelector('.js-message-box');
 ////////PREVIEW////////
 
 const resetButton = document.querySelector('.js-reset-button');
@@ -18,6 +18,7 @@ const previewPhone = document.querySelector('.js-preview-phone');
 const previewEmail = document.querySelector('.js-preview-email');
 const previewLinkedin = document.querySelector('.js-preview-linkedin');
 const previewGitHub = document.querySelector('.js-preview-github');
+const cardUrl = document.querySelector('.js-cardLink');
 ////FORM
 const inputName = document.querySelector('.js-input-nameCompleted');
 const inputJob = document.querySelector('.js-input-job');
@@ -37,7 +38,17 @@ const iconColorsThree = document.querySelector('.js-icons-3');
 const form = document.querySelector('.js-form');
 
 //datos
-
+const data = {
+  palette: 1,
+  name: '',
+  job: '',
+  phone: '',
+  email: '',
+  linkedin: '',
+  github: '',
+  photo: '',
+};
+const twitterLink = document.querySelector('.js-twitter-link');
 //funciones
 
 function showDesign() {
@@ -62,9 +73,12 @@ function collapDesign() {
 function showShare() {
   shareContainer.classList.remove('collapsed');
 }
-function showCreateCard() {
+function showCreateCard(responseJSON) {
   twitterCard.classList.remove('hidden');
   createCard.classList.add('pulsed-grey');
+  cardUrl.innerHTML = responseJSON.cardURL;
+  cardUrl.href = responseJSON.cardURL;
+  twitterLink.href = `https://twitter.com/intent/tweet?text=Mira%20mi%20nueva%20tarjeta%20de%20perfil&url=${responseJSON.cardURL}`;
 }
 
 function handleClickDesingTitle() {
@@ -83,22 +97,28 @@ function handleClickShareTitle() {
   collapDesign();
   collapRefill();
 }
+
 function handleClickCreateCard(event) {
   event.preventDefault();
-  showCreateCard();
-  createCard.classList.add('pulsed-grey');
+
+  fetch('https://dev.adalab.es/api/card/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+
+    .then((responseJSON) => {
+      console.log(responseJSON);
+      if (responseJSON.success === false) {
+        msgError.innerHTML = 'Uy! No se pudo crear el card, revisa los campos';
+      } else {
+        showCreateCard(responseJSON);
+        // createCard.classList.add('pulsed-grey');
+      }
+    });
 }
 /////////RESET///
-const data = {
-  colors: 1,
-  name: '',
-  job: '',
-  phone: '',
-  email: '',
-  linkedin: '',
-  github: '',
-  photo: '',
-};
 
 function handleResetInput(event) {
   event.preventDefault(event);
@@ -133,45 +153,16 @@ function updatePreview() {
     previewJob.innerHTML = 'Front-end developer';
   }
 }
-
+// NO SE NOS CARGA LA IMAGEN
 function handleInputForm(event) {
-
-  data[event.target.name] = event.target.value;
-  updatePreview();
-  console.log(data);
+  if (event.target.name !== 'photo') {
+    data[event.target.name] = event.target.value;
+    updatePreview();
+    console.log(data);
+  }
+  else{data[event.target.name] = event.target.files[0];}
 }
 
-// function handleInputName() {
-//   const name = inputName.value;
-//   data.name = name;
-//   updatePreview();
-// }
-// function handleInputJob() {
-//   const job = inputJob.value;
-//   data.job = job;
-//   updatePreview();
-// }
-// function handleInputEmail() {
-//   const email = inputEmail.value;
-//   data.email = email;
-//   updatePreview();
-// }
-// function handleInputPhone() {
-//   const phone = inputPhone.value;
-//   data.phone = phone;
-//   updatePreview();
-// }
-// function handleInputLinkedin() {
-//   const linkedin = inputLinkedin.value;
-//   data.linkedin = linkedin;
-//   updatePreview();
-// }
-// function handleInputGithub() {
-//   const github = inputGithub.value;
-//   data.github = github;
-//   const newGitHub = github.slice(1);
-//   data.github = newGitHub;
-//   updatePreview();
 //}
 ///PALETA COLORES///
 function handleClickColorOne() {
@@ -241,12 +232,6 @@ refillTitle.addEventListener('click', handleClickRefillTitle);
 shareTitle.addEventListener('click', handleClickShareTitle);
 createCard.addEventListener('click', handleClickCreateCard);
 resetButton.addEventListener('click', handleResetInput);
-// inputName.addEventListener('input', handleInputName);
-// inputJob.addEventListener('input', handleInputJob);
-// inputEmail.addEventListener('input', handleInputEmail);
-// inputPhone.addEventListener('input', handleInputPhone);
-// inputLinkedin.addEventListener('input', handleInputLinkedin);
-// inputGithub.addEventListener('input', handleInputGithub);
 colorOne.addEventListener('click', handleClickColorOne);
 colorTwo.addEventListener('click', handleClickColorTwo);
 colorThree.addEventListener('click', handleClickColorThree);
