@@ -1,4 +1,5 @@
 .grid{
+
     @media all and (min-width:768px){
         display: grid;
         grid-template-columns: 60% 40%;
@@ -9,3 +10,4 @@
         grid-template-columns: 40% 60%;
     }
 }
+main{height: 70vh;}

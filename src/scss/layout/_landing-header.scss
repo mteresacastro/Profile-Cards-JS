@@ -1,0 +1,21 @@
+.header-landing {
+    height: 15vh;
+    width: 100%;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+      background-color: $color-white-two;
+      @media all and(min-width:768px) {
+        padding: 0;
+        padding-top: 150px;
+  
+    
+  
+      }
+      .logo-menu-1 {
+        width: 30rem;
+        height: 7.3rem;
+      }
+}

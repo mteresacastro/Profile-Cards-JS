@@ -1,0 +1,26 @@
+.header {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  background-color: $color-white;
+  justify-content: center;
+  align-items: center;
+ 
+  @media all and(min-width:768px) {
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+
+    background-color: $color-white;
+  }
+}
+
+.logo-menu {
+  width: 25rem;
+  height: 7.3rem;
+  @media all and(min-width:768px) {
+    margin-left: 50px;
+  }
+}

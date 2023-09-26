@@ -1,17 +1,21 @@
 .footer{
+
     height: 15vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
     border: 1px solid $color-white-three;
-    font-size: 1.4rem;
-    height: 15vh;
+
+    font-size: 1.3rem;
+ 
  
     @media all and (min-width: 768px){
         flex-direction: row;
         justify-content: space-between;
         padding-right: 4rem;
+        
     }
 
     &__p{
@@ -19,9 +23,7 @@
         line-height: 2rem;
         font-weight: 400;
         color: $color-grey2;
-        padding-top: 1.8rem;
-        padding-left: 6.1rem;
-        padding-right: 4rem;
+        padding:10px;
         
         @media all and (min-width: 768px){
             padding-top: 0rem;
@@ -30,6 +32,6 @@
     }
 
     &__img{
-        width: 10.3rem;
+        width: 11.3rem;
     }
 }
