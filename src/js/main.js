@@ -19,6 +19,7 @@ const previewEmail = document.querySelector('.js-preview-email');
 const previewLinkedin = document.querySelector('.js-preview-linkedin');
 const previewGitHub = document.querySelector('.js-preview-github');
 const cardUrl = document.querySelector('.js-cardLink');
+const previewPhoto = document.querySelector('.js__profile-preview');
 ////FORM
 const inputName = document.querySelector('.js-input-nameCompleted');
 const inputJob = document.querySelector('.js-input-job');
@@ -147,6 +148,7 @@ function updatePreview() {
   previewEmail.href = `mailto:${data.email}`;
   previewLinkedin.href = `https://${data.linkedin}`;
   previewGitHub.href = `https://github.com/${data.github.slice(1)}`;
+  previewPhoto.href =data.photo
   if (data.name === '') {
     previewName.innerHTML = 'Nombre Apellido';
   }
