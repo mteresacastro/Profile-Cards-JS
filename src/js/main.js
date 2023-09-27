@@ -149,6 +149,7 @@ function handleResetInput(event) {
   previewName.innerHTML = 'Nombre Apellido';
   previewJob.innerHTML = 'Front-end developer';
   colorOne.checked = true;
+  previewPhoto.src='';
   sectionShareReset();
   handleClickColorOne();
 }
@@ -160,7 +161,7 @@ function updatePreview() {
   previewEmail.href = `mailto:${data.email}`;
   previewLinkedin.href = `https://${data.linkedin}`;
   previewGitHub.href = `https://github.com/${data.github.slice(1)}`;
-  previewPhoto.href =data.photo
+  previewPhoto.src =data.photo;
   if (data.name === '') {
     previewName.innerHTML = 'Nombre Apellido';
   }
