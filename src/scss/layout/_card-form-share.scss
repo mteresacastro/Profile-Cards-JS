@@ -3,6 +3,7 @@
   border:none;
   border-bottom: 1px solid $color-white-three;
   &__box{
+      cursor: pointer;
       display:flex;
       justify-content:space-between;
       &--icontext{
