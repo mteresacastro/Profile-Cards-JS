@@ -9,6 +9,7 @@ const shareTitle = document.querySelector('.js-shareTitle');
 const createCard = document.querySelector('.js-create-card');
 const twitterCard = document.querySelector('.js-twitter-card');
 const msgError = document.querySelector('.js-message-box');
+const btnTwitter = document.querySelector('.js-btn-twitter');
 ////////PREVIEW////////
 
 const resetButton = document.querySelector('.js-reset-button');
@@ -82,6 +83,15 @@ function showCreateCard(responseJSON) {
   twitterLink.href = `https://twitter.com/intent/tweet?text=Mira%20mi%20nueva%20tarjeta%20de%20perfil&url=${responseJSON.cardURL}`;
   msgError.classList.add('hidden');
 }
+function sectionShareReset(){
+  twitterCard.classList.add('hidden');
+  createCard.classList.remove('pulsed-grey');
+  cardUrl.innerHTML = '';
+  cardUrl.href = '';
+  twitterLink.href = '';
+  btnTwitter.classList.add('hidden');
+  msgError.classList.add('hidden');
+}
 
 function handleClickDesingTitle() {
   showDesign();
@@ -137,7 +147,7 @@ function handleResetInput(event) {
   previewName.innerHTML = 'Nombre Apellido';
   previewJob.innerHTML = 'Front-end developer';
   colorOne.checked = true;
-
+  sectionShareReset();
   handleClickColorOne();
 }
 
@@ -165,6 +175,9 @@ function handleInputForm(event) {
   }
   else{data[event.target.name] = event.target.files[0];}
 }
+
+
+
 
 //}
 ///PALETA COLORES///
