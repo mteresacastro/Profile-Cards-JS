@@ -168,6 +168,7 @@ function handleResetInput(event) {
   previewMiniImage.style.backgroundImage = `url('./assets/images/pikachu.png')`;
   sectionShareReset();
   handleClickColorOne();
+  localStorage.removeItem('dataForm', JSON.stringify(data));
 }
 
 function updatePreview() {
@@ -293,6 +294,7 @@ function getDataLs() {
 
     profileImage.style.backgroundImage = `url(${infoData.photo})`;
     profilePreview.style.backgroundImage = `url(${infoData.photo})`;
+    updatePreview();
   }
 }
 getDataLs();

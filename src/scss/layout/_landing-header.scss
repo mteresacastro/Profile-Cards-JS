@@ -14,8 +14,19 @@
     
   
       }
+
       .logo-menu-1 {
         width: 30rem;
-        height: 7.3rem;
-      }
+       
+        @media all and(min-width:768px){
+          width: 40rem;
+          height: 15rem ;
+        }
+        @media all and(min-width:1024px){
+   
+          width: 50rem;
+          height: 20rem;
+        
+
+        }}
 }

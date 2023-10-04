@@ -15,16 +15,26 @@
         font-size:2rem;
         @media (min-width:768px){
             font-size: 2.4rem;
-            padding-top: 50px;
+            padding-top: 3rem;
         }
+        @media (min-width:1024px){
+            font-size: 3rem;
+            margin-top:1rem;
+
+        }
+       
     }
     &__p{
         font-family: $font-Open;
         color: $color-dark-green;
         font-size: 1.2rem;
         @media (min-width:768px){
-            font-size: 1.6rem;
-            width: 33rem;
+            font-size: 2rem;
+            width: 80rem;
+        }
+        @media (min-width:1024px){
+            font-size: 2rem;
+            width: 100rem;
         }
     }
 }
