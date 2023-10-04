@@ -32,6 +32,7 @@ const inputPhone = document.querySelector('.js-input-phone');
 const inputLinkedin = document.querySelector('.js-input-linkedin');
 const inputGithub = document.querySelector('.js-input-github');
 const inputPhoto = document.querySelector('.js__profile-upload-btn');
+const inputPalette = document.querySelector('.js__
 
 ///COLORES
 const colorOne = document.querySelector('.js-color-1');
@@ -265,9 +266,11 @@ function handleClickColorThree() {
 
 function renderLocalStorage(){
   console.log('va bien render?');
+  palette.value = data.palette;
   inputName.value = data.name;
   inputJob.value = data.job;
-  inputPhoto.value = data.photo;
+  //inputPhoto.value = data.photo;
+  console.log('va bien render2');
   inputEmail.value = data.email;
   inputPhone.value = data.phone;
   inputLinkedin.value = data.linkedin;
@@ -278,15 +281,16 @@ function renderLocalStorage(){
   previewPhone.href = data.phone;
   previewLinkedin.href = data.linkedin;
   previewGitHub.href = data.github;
-  //profileImage.style.backgroundImage = data.photo;
-  //profilePreview.style.backgroundImage = data.photo;
+  profileImage.style.backgroundImage = data.photo;
+  profilePreview.style.backgroundImage = data.photo;
 }
 
 function getLocalStorage(){
   console.log('va bien?');
-  let storedData = JSON.parse(localStorage.getItem('localStorageFavourites'));
+  let storedData = JSON.parse(localStorage.getItem('dataForm'));
 
-  if (storedData !== null) {
+  if (storedData) {
+    console.log(storedData);
     data = storedData;
     renderLocalStorage();
   }
