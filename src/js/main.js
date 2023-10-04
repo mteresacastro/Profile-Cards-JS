@@ -10,6 +10,7 @@ const createCard = document.querySelector('.js-create-card');
 const twitterCard = document.querySelector('.js-twitter-card');
 const msgError = document.querySelector('.js-message-box');
 const btnTwitter = document.querySelector('.js-btn-twitter');
+
 ////////PREVIEW////////
 
 const resetButton = document.querySelector('.js-reset-button');
@@ -21,6 +22,8 @@ const previewLinkedin = document.querySelector('.js-preview-linkedin');
 const previewGitHub = document.querySelector('.js-preview-github');
 const cardUrl = document.querySelector('.js-cardLink');
 const previewPhoto = document.querySelector('.js__profile-preview');
+const previewMiniImage = document.querySelector('.js__profile-image');
+
 ////FORM
 const inputName = document.querySelector('.js-input-nameCompleted');
 const inputJob = document.querySelector('.js-input-job');
@@ -28,6 +31,8 @@ const inputEmail = document.querySelector('.js-input-email');
 const inputPhone = document.querySelector('.js-input-phone');
 const inputLinkedin = document.querySelector('.js-input-linkedin');
 const inputGithub = document.querySelector('.js-input-github');
+const inputPhoto = document.querySelector('.js__profile-upload-btn');
+
 ///COLORES
 const colorOne = document.querySelector('.js-color-1');
 const colorTwo = document.querySelector('.js-color-2');
@@ -40,7 +45,7 @@ const iconColorsThree = document.querySelector('.js-icons-3');
 const form = document.querySelector('.js-form');
 
 //datos
-const data = {
+let data = {
   palette: 1,
   name: '',
   job: '',
@@ -51,7 +56,10 @@ const data = {
   photo: '',
 };
 const twitterLink = document.querySelector('.js-twitter-link');
+
 //funciones
+
+//getLocalStorage();
 
 function showDesign() {
   designContainer.classList.remove('collapsed');
@@ -122,16 +130,26 @@ function handleClickCreateCard(event) {
 
     .then((responseJSON) => {
       console.log(responseJSON);
+
+
       if (responseJSON.success === false) {
         msgError.classList.remove('hidden');
         msgError.innerHTML = 'Uy! No se pudo crear la tarjeta, revisa los campos <i class="fa-regular fa-face-sad-cry"></i>';
+        if (responseJSON.error === 'Database error: ER_DATA_TOO_LONG') {
+          alert('Imagen demasiado grande, prueba con una de menos de 40kb');
+          return;
+        }
       } else {
         showCreateCard(responseJSON);
-        msgError.classList.add('hidden');
-        // createCard.classList.add('pulsed-grey');
+        msgError.classList.add('hidden');  // createCard.classList.add('pulsed-grey');
+        cardUrl.href = responseJSON.cardURL;
+        cardUrl.innerHTML = responseJSON.cardURL;
+        localStorage.setItem('dataForm', JSON.stringify(data));
       }
     });
 }
+
+
 /////////RESET///
 
 function handleResetInput(event) {
@@ -149,7 +167,8 @@ function handleResetInput(event) {
   previewName.innerHTML = 'Nombre Apellido';
   previewJob.innerHTML = 'Front-end developer';
   colorOne.checked = true;
-  previewPhoto.src='';
+  previewPhoto.style.backgroundImage = `url('./assets/images/pikachu.png')`;
+  previewMiniImage.style.backgroundImage = `url('./assets/images/pikachu.png')`;
   sectionShareReset();
   handleClickColorOne();
 }
@@ -161,26 +180,24 @@ function updatePreview() {
   previewEmail.href = `mailto:${data.email}`;
   previewLinkedin.href = `https://${data.linkedin}`;
   previewGitHub.href = `https://github.com/${data.github.slice(1)}`;
-  previewPhoto.src =data.photo;
+  previewPhoto.src = data.photo;
+
   if (data.name === '') {
     previewName.innerHTML = 'Nombre Apellido';
   }
   if (data.job === '') {
     previewJob.innerHTML = 'Front-end developer';
   }
+  //localStorage.setItem('dataForm', JSON.stringify(data));
 }
-// NO SE NOS CARGA LA IMAGEN
+
 function handleInputForm(event) {
   if (event.target.name !== 'photo') {
     data[event.target.name] = event.target.value;
     updatePreview();
-    console.log(data);
   }
   else{data[event.target.name] = event.target.files[0];}
 }
-
-
-
 
 //}
 ///PALETA COLORES///
@@ -244,6 +261,39 @@ function handleClickColorThree() {
   iconColorsThree.classList.remove('liRed');
 }
 
+
+
+function renderLocalStorage(){
+  console.log('va bien render?');
+  inputName.value = data.name;
+  inputJob.value = data.job;
+  inputPhoto.value = data.photo;
+  inputEmail.value = data.email;
+  inputPhone.value = data.phone;
+  inputLinkedin.value = data.linkedin;
+  inputGithub.value = data.github;
+  previewName.innerHTML = data.name;
+  previewJob.innerHTML = data.job;
+  previewEmail.href = data.email;
+  previewPhone.href = data.phone;
+  previewLinkedin.href = data.linkedin;
+  previewGitHub.href = data.github;
+  //profileImage.style.backgroundImage = data.photo;
+  //profilePreview.style.backgroundImage = data.photo;
+}
+
+function getLocalStorage(){
+  console.log('va bien?');
+  let storedData = JSON.parse(localStorage.getItem('localStorageFavourites'));
+
+  if (storedData !== null) {
+    data = storedData;
+    renderLocalStorage();
+  }
+}
+
+
+
 //eventos
 
 designTitle.addEventListener('click', handleClickDesingTitle);
@@ -255,3 +305,5 @@ colorOne.addEventListener('click', handleClickColorOne);
 colorTwo.addEventListener('click', handleClickColorTwo);
 colorThree.addEventListener('click', handleClickColorThree);
 form.addEventListener('input', handleInputForm);
+window.addEventListener('load', getLocalStorage);
+
