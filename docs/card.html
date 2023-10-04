@@ -16,7 +16,7 @@
 
 <body>
     <header class="-page">
-    <img class="logo-menu" src="./assets/images/logo-awesome-profile-cards.svg" alt="logo header">
+    <img class="logo-menu" src="./assets/images/ultimologo.png" alt="logo header">
     </header>
   <main class="grid">
     <section class="card">
@@ -68,7 +68,7 @@
 
             <div class="design__box2--colors js-box-colors">
                 <label  for="colors">
-                    <input class="design-input js-color-1 " id="colors" checked type="radio" name="palette" value="1">
+                    <input class="design-input js-color-1 " id="colors1" checked type="radio" name="palette" value="1">
                     <img src="./assets/images/color1.png" alt="color1">
                 </label>
 
@@ -97,27 +97,27 @@
                     <input name="name" type="text" id="name"placeholder="Ej: Sally Jill" class="input-refill js-input-nameCompleted" value="" required>
                 </label>
                 <label for="position" class="label2">Puesto
-                    <input name="job" type="text" id="position" placeholder="Ej: Front-end unicorn" class="input-refill js-input-job" value="">
+                    <input name="job" type="text" id="position" placeholder="Ej: Front-end unicorn" class="input-refill js-input-job" value="" required>
                 </label>
                 <label>Imagen de perfil</label>
                 <div class="divAddPreviewPhoto">
                 <label class="label button-img" for="image-selector">Añadir imagen</label>
-                <input name="photo" type="file"  id="image-selector" class=" js__profile-upload-btn action_hiddenField">   
+                <input name="photo" type="file"  id="image-selector" class=" js__profile-upload-btn action_hiddenField" required>   
          
                     <div class="preview profile-image js__profile-image"></div></div> 
                   
             
                 <label for="email" class="label2">Email
-                    <input name="email" type="email" id="email" placeholder="Ej: Sally-hill@gmail.com" class="input-refill js-input-email" value="">
+                    <input name="email" type="email" id="email" placeholder="Ej: Sally-hill@gmail.com" class="input-refill js-input-email" value="" pattern="[a-zA-Z0-9!#$%&'*\/=?^_`\{\|\}~\+\-]([\.]?[a-zA-Z0-9!#$%&'*\/=?^_`\{\|\}~\+\-])+@[a-zA-Z0-9]([^@&%$\/\(\)=?¿!\.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" minlength="11">
                 </label>
                 <label for="phone" class="label2">Teléfono
-                    <input name="phone" type="tel" id="phone" placeholder="Ej: 555-55-55-55" class="input-refill js-input-phone">
+                    <input name="phone" type="tel" id="phone" placeholder="Ej: 555-55-55-55" class="input-refill js-input-phone" minlength="9" pattern="[0-9]{9}">
                 </label>
                 <label for="lk" class="label2">Linkedin
-                    <input name="linkedin" type="search" id="lk" placeholder="Ej: linkedin.com/in/sally.hill" class="input-refill js-input-linkedin" value="">
+                    <input name="linkedin" type="search" id="lk" placeholder="Ej: linkedin.com/in/sally.hill" class="input-refill js-input-linkedin" value="" required>
                 </label>
                 <label for="gh" class="label2">GitHub
-                    <input name="github" type="search" id="gh" placeholder="Ej: @sally-hill" class="input-refill js-input-github" value="">
+                    <input name="github" type="search" id="gh" placeholder="Ej: @sally-hill" class="input-refill js-input-github" value="" required>
                 </label>   
         </div>
     </fieldset>
@@ -150,9 +150,9 @@
     </form>
   </main>
   <footer class="footer-card">
-      <p class="footer__p" >Awesome profile-cards @2023
+      <p class="footer__p" >Pokémon Awesome profile-cards @2023
       </p>
-      <img class="footer__img" src="./assets/images/logo-adalab.png" alt="logo adalab">
+      <img class="footer__img" src="./assets/images/logoball.png" alt="logo adalab">
   </footer>
   <script src="./assets/js/main.js"></script>
   
