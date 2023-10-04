@@ -4,7 +4,7 @@
     justify-content: center;
     background-color: $color-white ;
     align-items: center;
-    background-image: linear-gradient(to bottom, #bfcdd0, #dde9ed);
+    background-image: linear-gradient(to bottom, #a2c8fa, #6c8de8);
     @media all and(min-width:768px){
         
         border-radius: 6px;
@@ -24,12 +24,12 @@
         top: -10px;
         height: 30px;
         padding: 4px 12px 4px 10px;
-        background-color: #bfcdd0;
+        background-color: #a2c8fa;
         border-radius: 15px;
         text-transform: uppercase;
         border: solid 1px $color-white;
         font-family: $font-Open;
-        color: #54585a;
+        color: #033046;
         margin-top: 30px;
         transform: translateY(-10%) translateX(-110%);
         cursor: pointer;

@@ -22,10 +22,10 @@
               
         
             <label for="email" class="label2">Email
-                <input name="email" type="email" id="email" placeholder="Ej: Sally-hill@gmail.com" class="input-refill js-input-email" value="" required>
+                <input name="email" type="email" id="email" placeholder="Ej: Sally-hill@gmail.com" class="input-refill js-input-email" value="" pattern="[a-zA-Z0-9!#$%&'*\/=?^_`\{\|\}~\+\-]([\.]?[a-zA-Z0-9!#$%&'*\/=?^_`\{\|\}~\+\-])+@[a-zA-Z0-9]([^@&%$\/\(\)=?¿!\.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" minlength="11">
             </label>
             <label for="phone" class="label2">Teléfono
-                <input name="phone" type="tel" id="phone" placeholder="Ej: 555-55-55-55" class="input-refill js-input-phone" required>
+                <input name="phone" type="tel" id="phone" placeholder="Ej: 555-55-55-55" class="input-refill js-input-phone" minlength="9" pattern="[0-9]{9}">
             </label>
             <label for="lk" class="label2">Linkedin
                 <input name="linkedin" type="search" id="lk" placeholder="Ej: linkedin.com/in/sally.hill" class="input-refill js-input-linkedin" value="" required>
