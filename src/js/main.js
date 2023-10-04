@@ -32,7 +32,6 @@ const inputPhone = document.querySelector('.js-input-phone');
 const inputLinkedin = document.querySelector('.js-input-linkedin');
 const inputGithub = document.querySelector('.js-input-github');
 const inputPhoto = document.querySelector('.js__profile-upload-btn');
-const inputPalette = document.querySelector('.js__
 
 ///COLORES
 const colorOne = document.querySelector('.js-color-1');
@@ -57,10 +56,9 @@ let data = {
   photo: '',
 };
 const twitterLink = document.querySelector('.js-twitter-link');
+const infoData = JSON.parse(localStorage.getItem('dataForm'));
 
 //funciones
-
-//getLocalStorage();
 
 function showDesign() {
   designContainer.classList.remove('collapsed');
@@ -92,7 +90,7 @@ function showCreateCard(responseJSON) {
   btnTwitter.classList.remove('hidden');
   twitterLink.href = `https://twitter.com/intent/tweet?text=Mira%20mi%20nueva%20tarjeta%20de%20perfil&url=${responseJSON.cardURL}`;
 }
-function sectionShareReset(){
+function sectionShareReset() {
   twitterCard.classList.add('hidden');
   createCard.classList.remove('pulsed-grey');
   cardUrl.innerHTML = '';
@@ -130,26 +128,24 @@ function handleClickCreateCard(event) {
     .then((response) => response.json())
 
     .then((responseJSON) => {
-      console.log(responseJSON);
-
-
       if (responseJSON.success === false) {
         msgError.classList.remove('hidden');
-        msgError.innerHTML = 'Uy! No se pudo crear la tarjeta, revisa los campos <i class="fa-regular fa-face-sad-cry"></i>';
+        msgError.innerHTML =
+          'Uy! No se pudo crear la tarjeta, revisa los campos <i class="fa-regular fa-face-sad-cry"></i>';
         if (responseJSON.error === 'Database error: ER_DATA_TOO_LONG') {
           alert('Imagen demasiado grande, prueba con una de menos de 40kb');
+
           return;
         }
       } else {
         showCreateCard(responseJSON);
-        msgError.classList.add('hidden');  // createCard.classList.add('pulsed-grey');
+        msgError.classList.add('hidden'); // createCard.classList.add('pulsed-grey');
         cardUrl.href = responseJSON.cardURL;
         cardUrl.innerHTML = responseJSON.cardURL;
         localStorage.setItem('dataForm', JSON.stringify(data));
-      }
+    }    console.log(responseJSON);
     });
 }
-
 
 /////////RESET///
 
@@ -185,19 +181,23 @@ function updatePreview() {
 
   if (data.name === '') {
     previewName.innerHTML = 'Nombre Apellido';
+  } else {
+    previewName.innerHTML = inputName.value;
   }
   if (data.job === '') {
     previewJob.innerHTML = 'Front-end developer';
+  } else {
+    previewJob.innerHTML = inputJob.value;
   }
-  //localStorage.setItem('dataForm', JSON.stringify(data));
 }
 
 function handleInputForm(event) {
   if (event.target.name !== 'photo') {
     data[event.target.name] = event.target.value;
     updatePreview();
+  } else {
+    data[event.target.name] = event.target.files[0];
   }
-  else{data[event.target.name] = event.target.files[0];}
 }
 
 //}
@@ -262,41 +262,40 @@ function handleClickColorThree() {
   iconColorsThree.classList.remove('liRed');
 }
 
+function getDataLs() {
+  if (infoData !== null) {
+    data.palette = infoData.palette;
+    if (infoData.palette == 1) {
+      handleClickColorOne();
+      colorOne.checked = true;
+    } else if (infoData.palette == 2) {
+      handleClickColorTwo();
+      colorTwo.checked = true;
+    } else {
+      handleClickColorThree();
+      colorThree.checked = true;
+    }
+    data.name = infoData.name;
+    data.job = infoData.job;
+    data.phone = infoData.phone;
+    data.email = infoData.email;
+    data.linkedin = infoData.linkedin;
+    data.github = infoData.github;
+    data.photo = infoData.photo;
+    inputName.value = data.name;
+    inputJob.value = data.job;
+    inputPhone.value = data.phone;
+    inputEmail.value = data.email;
+    inputLinkedin.value = data.linkedin;
+    inputGithub.value = data.github;
+    previewName.innerHTML = infoData.name;
+    previewJob.innerHTML = infoData.job;
 
-
-function renderLocalStorage(){
-  console.log('va bien render?');
-  palette.value = data.palette;
-  inputName.value = data.name;
-  inputJob.value = data.job;
-  //inputPhoto.value = data.photo;
-  console.log('va bien render2');
-  inputEmail.value = data.email;
-  inputPhone.value = data.phone;
-  inputLinkedin.value = data.linkedin;
-  inputGithub.value = data.github;
-  previewName.innerHTML = data.name;
-  previewJob.innerHTML = data.job;
-  previewEmail.href = data.email;
-  previewPhone.href = data.phone;
-  previewLinkedin.href = data.linkedin;
-  previewGitHub.href = data.github;
-  profileImage.style.backgroundImage = data.photo;
-  profilePreview.style.backgroundImage = data.photo;
-}
-
-function getLocalStorage(){
-  console.log('va bien?');
-  let storedData = JSON.parse(localStorage.getItem('dataForm'));
-
-  if (storedData) {
-    console.log(storedData);
-    data = storedData;
-    renderLocalStorage();
+    profileImage.style.backgroundImage = `url(${infoData.photo})`;
+    profilePreview.style.backgroundImage = `url(${infoData.photo})`;
   }
 }
-
-
+getDataLs();
 
 //eventos
 
@@ -309,5 +308,3 @@ colorOne.addEventListener('click', handleClickColorOne);
 colorTwo.addEventListener('click', handleClickColorTwo);
 colorThree.addEventListener('click', handleClickColorThree);
 form.addEventListener('input', handleInputForm);
-window.addEventListener('load', getLocalStorage);
-
