@@ -137,7 +137,11 @@ function handleClickCreateCard(event) {
           return;
         }
       } else {
-        if (!inputEmail.value.includes('@') || inputPhone.value.length < 9 || !inputLinkedin.value.includes('linkedin.com') || !inputGithub.value.includes('@')){
+        if (!inputEmail.value.includes('@') ||
+        inputPhone.value.length < 9 ||
+        !/^\d+$/.test(inputPhone.value) ||
+        !inputLinkedin.value.includes('linkedin.com') ||
+        !inputGithub.value.includes('@')){
           alert('Por favor, revisa si email, teléfono, linkedin y Github son válidos');
           return;
         }
