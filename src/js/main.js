@@ -134,16 +134,19 @@ function handleClickCreateCard(event) {
           'Uy! No se pudo crear la tarjeta, revisa los campos <i class="fa-regular fa-face-sad-cry"></i>';
         if (responseJSON.error === 'Database error: ER_DATA_TOO_LONG') {
           alert('Imagen demasiado grande, prueba con una de menos de 40kb');
-
           return;
         }
       } else {
+        if (!inputEmail.value.includes('@') || inputPhone.value.length < 9 || !inputLinkedin.value.includes('linkedin.com') || !inputGithub.value.includes('@')){
+          alert('Por favor, revisa si email, teléfono, linkedin y Github son válidos');
+          return;
+        }
         showCreateCard(responseJSON);
         msgError.classList.add('hidden'); // createCard.classList.add('pulsed-grey');
         cardUrl.href = responseJSON.cardURL;
         cardUrl.innerHTML = responseJSON.cardURL;
         localStorage.setItem('dataForm', JSON.stringify(data));
-    }    console.log(responseJSON);
+      }
     });
 }
 
