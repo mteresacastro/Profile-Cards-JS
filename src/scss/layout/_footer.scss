@@ -19,9 +19,9 @@
 
     &__p{
         font-family: $font-Open;
-        line-height: 2rem;
+        line-height: 2.5rem;
         font-weight: 400;
-        color: $color-grey2;
+        color: rgb(1, 108, 81);
         padding:10px;
         
         @media all and (min-width: 768px){
@@ -31,7 +31,7 @@
     }
 
     &__img{
-        width: 5rem;
+        width: 8rem;
      
     }
 }

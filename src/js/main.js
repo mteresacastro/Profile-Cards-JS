@@ -171,8 +171,8 @@ function handleResetInput(event) {
   previewName.innerHTML = 'Nombre Apellido';
   previewJob.innerHTML = 'Front-end developer';
   colorOne.checked = true;
-  previewPhoto.style.backgroundImage = `url('./assets/images/pikachu.png')`;
-  previewMiniImage.style.backgroundImage = `url('./assets/images/pikachu.png')`;
+  previewPhoto.style.backgroundImage = `url('./assets/images/profileUser2.jpg')`;
+  previewMiniImage.style.backgroundImage = `url('./assets/images/profileUser2.jpg')`;
   sectionShareReset();
   handleClickColorOne();
   localStorage.removeItem('dataForm', JSON.stringify(data));

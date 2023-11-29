@@ -4,7 +4,7 @@
     justify-content: center;
     background-color: $color-white ;
     align-items: center;
-    background-image: linear-gradient(to bottom, #a2c8fa, #6c8de8);
+    background-image: linear-gradient(to bottom, #a0d1dbb1, #6cc7e86e);
     @media all and(min-width:768px){
         
         border-radius: 6px;
@@ -24,7 +24,7 @@
         top: -10px;
         height: 30px;
         padding: 4px 12px 4px 10px;
-        background-color: #a2c8fa;
+        background-color: rgba(72, 190, 229, 0.319);
         border-radius: 15px;
         text-transform: uppercase;
         border: solid 1px $color-white;
@@ -94,7 +94,7 @@
                 margin: 10px 0;
                 position: relative;
                 top: 10px;
-                background-image: url(../images/pikachu.png);
+                background-image: url(../images/profileUser2.jpg);
                 background-size:83%;
                 background-repeat: no-repeat;
                 background-position: center;

@@ -76,35 +76,35 @@
     font-family: $font-Open;
     text-align: center;
     font-weight: 600;
-    font-size: 18px;
-    padding-top: 20px;
+    font-size: 2rem;
+    padding-top: 2rem;
     color: $color-gunmetal;
   }
   .url{
     font-family: $font-Open;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 1.8rem;
     color:$color-orange;
     text-align: center;
-    margin:5px;
+    margin:0.5rem;
     text-decoration: none;
   }
   .btn__twitter{
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 1rem;
     flex-direction: column;
     align-items:center;
-    margin-bottom: 35px;
+    margin-bottom: 3.5rem;
     
     .a{ display: flex;
         justify-content: center;
         align-items: center;
         gap: 9.5px;
         background-color: #00a0f5;
-        height: 30px;
-        width: 181px;
-        font-size: 14px;
+        height: 3rem;
+        width: 18rem;
+        font-size: 1.4rem;
         font-family: $font-Open;
         text-align: center;
         border-radius: 3px;

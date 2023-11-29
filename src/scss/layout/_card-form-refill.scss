@@ -54,7 +54,9 @@
   }
   .input-refill {
     border: 1px solid $color-green;
+    padding-left: 0.5rem;
     height: 3rem;
+    border-radius: 0.5rem;
   }
 
   .img-div {
@@ -76,10 +78,10 @@
   .action_hiddenField{
     display: none;
     
-    background-image: url(../images/pikachu.png);
+    background-image: url(../images/profileUser2.jpg);
   }
   .preview {
-    background-image: url(../images/pikachu.png);
+    background-image: url(../images/profileUser2.jpg);
     z-index: 100;
     position: relative;
     background-size: cover;
